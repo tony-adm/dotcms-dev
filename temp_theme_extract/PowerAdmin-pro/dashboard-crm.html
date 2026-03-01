@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Dashboard - PowerAdmin</title>
+  <meta name="description" content="PowerAdmin - Bootstrap Admin Template">
+  <meta name="keywords" content="admin, dashboard, bootstrap">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts - Plus Jakarta Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/phosphor-icons/phosphor-icons.css" rel="stylesheet">
+  <link href="assets/vendor/lucide-icons/lucide.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/choices.js/choices.min.css" rel="stylesheet">
+  <link href="assets/vendor/flatpickr/flatpickr.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+    * Template Name: PowerAdmin - Bootstrap Admin Template
+    * Template URL: https://bootstrapmade.com/power-admin-template/
+    * Updated: Feb 26 2026 with Bootstrap v5.3.8
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <!-- Header Left -->
+    <div class="header-left">
+      <a href="index.html" class="header-logo">
+        <img src="assets/img/logo.webp" alt="PowerAdmin">
+        <span>PowerAdmin</span>
+      </a>
+      <button class="sidebar-toggle" title="Toggle Sidebar">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Apps Shortcuts -->
+      <div class="header-action dropdown apps-dropdown">
+        <button class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="Apps">
+          <i class="bi bi-grid-3x3-gap"></i>
+        </button>
+        <div class="dropdown-menu">
+          <div class="apps-dropdown-header">
+            <h6>Quick Access</h6>
+          </div>
+          <div class="apps-grid">
+            <a href="apps-chat.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: color-mix(in srgb, var(--accent-color), transparent 88%); color: var(--accent-color);">
+                <i class="bi bi-chat-dots"></i>
+              </div>
+              <span>Chat</span>
+            </a>
+            <a href="apps-email.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: var(--info-color-light); color: var(--info-color);">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <span>Email</span>
+            </a>
+            <a href="apps-calendar.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: var(--success-color-light); color: var(--success-color);">
+                <i class="bi bi-calendar-event"></i>
+              </div>
+              <span>Calendar</span>
+            </a>
+            <a href="apps-kanban.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: var(--warning-color-light); color: var(--warning-color);">
+                <i class="bi bi-kanban"></i>
+              </div>
+              <span>Kanban</span>
+            </a>
+            <a href="apps-file-manager.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: var(--danger-color-light); color: var(--danger-color);">
+                <i class="bi bi-folder"></i>
+              </div>
+              <span>Files</span>
+            </a>
+            <a href="apps-todo.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: color-mix(in srgb, var(--accent-color), transparent 88%); color: var(--accent-color);">
+                <i class="bi bi-check2-square"></i>
+              </div>
+              <span>Todo</span>
+            </a>
+            <a href="apps-contacts.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: var(--info-color-light); color: var(--info-color);">
+                <i class="bi bi-people"></i>
+              </div>
+              <span>Contacts</span>
+            </a>
+            <a href="apps-support.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: var(--success-color-light); color: var(--success-color);">
+                <i class="bi bi-headset"></i>
+              </div>
+              <span>Support</span>
+            </a>
+            <a href="invoice-list.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: var(--warning-color-light); color: var(--warning-color);">
+                <i class="bi bi-receipt"></i>
+              </div>
+              <span>Invoices</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Search (Desktop) -->
+    <div class="header-search">
+      <form class="search-form" action="search-results.html" method="GET">
+        <i class="bi bi-search search-icon"></i>
+        <input type="search" name="q" placeholder="Search anything..." autocomplete="off">
+        <kbd class="search-shortcut">/</kbd>
+      </form>
+    </div>
+
+    <!-- Header Right -->
+    <div class="header-right">
+      <!-- Desktop Actions (hidden on mobile, shown in mobile menu) -->
+      <div class="header-actions-desktop">
+
+        <!-- Theme Toggle -->
+        <button class="header-action theme-toggle" title="Toggle Theme">
+          <i class="ph ph-moon theme-icon-dark"></i>
+          <i class="ph ph-sun theme-icon-light"></i>
+        </button>
+
+        <!-- Header Divider -->
+        <div class="header-divider"></div>
+
+        <!-- Messages -->
+        <div class="header-action dropdown messages-dropdown">
+          <button class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="Messages">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge">2</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <div class="messages-header">
+              <h6>Messages</h6>
+              <a href="apps-chat.html">View All</a>
+            </div>
+            <div class="messages-list">
+              <a href="apps-chat.html" class="message-item unread">
+                <img src="assets/img/avatars/avatar-2.webp" alt="" class="message-avatar">
+                <div class="message-content">
+                  <div class="message-top">
+                    <span class="message-sender">Sarah Connor</span>
+                    <span class="message-time">2m</span>
+                  </div>
+                  <div class="message-text">Hey, can you review the new designs I sent?</div>
+                </div>
+              </a>
+              <a href="apps-chat.html" class="message-item unread">
+                <img src="assets/img/avatars/avatar-3.webp" alt="" class="message-avatar">
+                <div class="message-content">
+                  <div class="message-top">
+                    <span class="message-sender">Mike Chen</span>
+                    <span class="message-time">15m</span>
+                  </div>
+                  <div class="message-text">The deployment is complete. All tests passing.</div>
+                </div>
+              </a>
+              <a href="apps-chat.html" class="message-item">
+                <img src="assets/img/avatars/avatar-4.webp" alt="" class="message-avatar">
+                <div class="message-content">
+                  <div class="message-top">
+                    <span class="message-sender">Emily Park</span>
+                    <span class="message-time">1h</span>
+                  </div>
+                  <div class="message-text">Meeting rescheduled to 3 PM tomorrow</div>
+                </div>
+              </a>
+              <a href="apps-chat.html" class="message-item">
+                <img src="assets/img/avatars/avatar-5.webp" alt="" class="message-avatar">
+                <div class="message-content">
+                  <div class="message-top">
+                    <span class="message-sender">David Lee</span>
+                    <span class="message-time">3h</span>
+                  </div>
+                  <div class="message-text">Thanks for the quick turnaround on that!</div>
+                </div>
+              </a>
+            </div>
+            <div class="messages-footer">
+              <a href="apps-chat.html">See all messages</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="header-action dropdown notification-dropdown">
+          <button class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="Notifications">
+            <i class="bi bi-bell"></i>
+            <span class="badge">3</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <div class="notification-header">
+              <h6>Notifications</h6>
+              <a href="#" data-notification-action="mark-all-read">Mark all read</a>
+            </div>
+            <div class="notification-list">
+              <div class="notification-item unread">
+                <div class="notification-icon success">
+                  <i class="bi bi-check-circle"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-title">Order Completed</div>
+                  <div class="notification-text">Your order #12345 has been delivered</div>
+                  <div class="notification-time"><i class="bi bi-clock"></i> 5 min ago</div>
+                </div>
+              </div>
+              <div class="notification-item unread">
+                <div class="notification-icon warning">
+                  <i class="bi bi-exclamation-triangle"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-title">Low Storage</div>
+                  <div class="notification-text">Server storage is running low (85% used)</div>
+                  <div class="notification-time"><i class="bi bi-clock"></i> 1 hour ago</div>
+                </div>
+              </div>
+              <div class="notification-item unread">
+                <div class="notification-icon primary">
+                  <i class="bi bi-person-plus"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-title">New User Registered</div>
+                  <div class="notification-text">Alex Thompson just created an account</div>
+                  <div class="notification-time"><i class="bi bi-clock"></i> 2 hours ago</div>
+                </div>
+              </div>
+              <div class="notification-item">
+                <div class="notification-icon info">
+                  <i class="bi bi-info-circle"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-title">System Update</div>
+                  <div class="notification-text">Version 2.4.0 is available for update</div>
+                  <div class="notification-time"><i class="bi bi-clock"></i> 5 hours ago</div>
+                </div>
+              </div>
+              <div class="notification-item">
+                <div class="notification-icon danger">
+                  <i class="bi bi-shield-exclamation"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-title">Security Alert</div>
+                  <div class="notification-text">Unusual login attempt detected from new IP</div>
+                  <div class="notification-time"><i class="bi bi-clock"></i> Yesterday</div>
+                </div>
+              </div>
+            </div>
+            <div class="notification-footer">
+              <a href="notifications.html">View all notifications</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Dropdown -->
+        <div class="header-action dropdown user-dropdown">
+          <button class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="assets/img/profile-img.webp" alt="User" class="avatar">
+            <div class="user-info">
+              <span class="user-name">John Doe</span>
+              <span class="user-role">Administrator</span>
+            </div>
+            <i class="bi bi-chevron-down user-arrow"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <div class="user-dropdown-header">
+              <img src="assets/img/profile-img.webp" alt="User" class="user-dropdown-avatar">
+              <div class="user-dropdown-info">
+                <div class="user-dropdown-name">John Doe</div>
+                <div class="user-dropdown-email">john.doe@example.com</div>
+              </div>
+              <span class="user-dropdown-status"></span>
+            </div>
+            <div class="user-dropdown-body">
+              <a class="user-dropdown-item" href="profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+              <a class="user-dropdown-item" href="apps-chat.html">
+                <i class="bi bi-chat-left-text"></i>
+                <span>Messages</span>
+                <span class="user-dropdown-badge">2</span>
+              </a>
+              <a class="user-dropdown-item" href="apps-todo.html">
+                <i class="bi bi-check2-square"></i>
+                <span>My Tasks</span>
+              </a>
+            </div>
+            <div class="user-dropdown-body user-dropdown-section">
+              <a class="user-dropdown-item" href="settings.html">
+                <i class="bi bi-gear"></i>
+                <span>Settings</span>
+              </a>
+              <a class="user-dropdown-item" href="activity.html">
+                <i class="bi bi-clock-history"></i>
+                <span>Activity Log</span>
+              </a>
+            </div>
+            <div class="user-dropdown-footer">
+              <a class="user-dropdown-item user-dropdown-logout" href="auth-login.html">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Actions (visible only on mobile) -->
+      <div class="header-actions-mobile">
+        <!-- Search Toggle (Mobile) -->
+        <button class="header-action search-toggle" title="Search">
+          <i class="bi bi-search"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="header-action mobile-menu-toggle" title="More">
+          <i class="bi bi-three-dots-vertical"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Search -->
+  <div class="mobile-search">
+    <form class="search-form" action="search-results.html" method="GET">
+      <input type="search" name="q" placeholder="Search..." autocomplete="off">
+      <button type="submit"><i class="bi bi-search"></i></button>
+    </form>
+  </div>
+
+  <!-- Mobile Header Menu -->
+  <div class="mobile-header-menu">
+    <div class="mobile-header-menu-content">
+      <!-- Theme Toggle -->
+      <button class="mobile-menu-item theme-toggle" title="Toggle Theme">
+        <i class="ph ph-moon theme-icon-dark"></i>
+        <i class="ph ph-sun theme-icon-light"></i>
+        <span class="mobile-menu-label">Theme</span>
+      </button>
+
+      <!-- Chat -->
+      <a href="apps-chat.html" class="mobile-menu-item">
+        <i class="bi bi-chat-left-text"></i>
+        <span class="badge">2</span>
+        <span class="mobile-menu-label">Messages</span>
+      </a>
+
+      <!-- Notifications -->
+      <a href="notifications.html" class="mobile-menu-item">
+        <i class="bi bi-bell"></i>
+        <span class="badge">3</span>
+        <span class="mobile-menu-label">Alerts</span>
+      </a>
+
+      <!-- Profile -->
+      <a href="profile.html" class="mobile-menu-item">
+        <i class="bi bi-person"></i>
+        <span class="mobile-menu-label">Profile</span>
+      </a>
+
+      <!-- Settings -->
+      <a href="settings.html" class="mobile-menu-item">
+        <i class="bi bi-gear"></i>
+        <span class="mobile-menu-label">Settings</span>
+      </a>
+
+      <!-- Sign Out -->
+      <a href="auth-login.html" class="mobile-menu-item mobile-menu-item-danger">
+        <i class="bi bi-box-arrow-right"></i>
+        <span class="mobile-menu-label">Sign Out</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <!-- Icon Strip -->
+    <div class="sidebar-strip">
+      <div class="sidebar-strip-logo">
+        <a href="index.html">
+          <img src="assets/img/logo.webp" alt="PowerAdmin">
+        </a>
+      </div>
+
+      <nav class="sidebar-strip-nav">
+        <ul class="strip-menu">
+          <li>
+            <button class="strip-item active" data-panel="dashboards" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Dashboards">
+              <i class="ph ph-squares-four"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="apps" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Apps">
+              <i class="ph ph-rocket-launch"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="users" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Users">
+              <i class="ph ph-users-three"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="components" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="UI Elements">
+              <i class="ph ph-puzzle-piece"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="forms" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Forms">
+              <i class="ph ph-textbox"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="tables" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tables">
+              <i class="ph ph-table"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="charts" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Charts">
+              <i class="ph ph-chart-line-up"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="icons" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Icons">
+              <i class="ph ph-diamond"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="auth" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Authentication">
+              <i class="ph ph-shield-check"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="pages" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Pages">
+              <i class="ph ph-file-text"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-strip-bottom">
+        <a href="notifications.html" class="strip-item" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Notifications">
+          <i class="bi bi-bell"></i>
+        </a>
+        <a href="settings.html" class="strip-item" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Settings">
+          <i class="bi bi-gear"></i>
+        </a>
+        <a href="profile.html" class="sidebar-strip-avatar" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Profile">
+          <img src="assets/img/profile-img.webp" alt="User">
+        </a>
+      </div>
+    </div>
+
+    <!-- Nav Panel -->
+    <div class="sidebar-panel">
+
+      <!-- Panel: Dashboards -->
+      <div class="sidebar-panel-section active" data-section="dashboards">
+        <div class="sidebar-panel-header">
+          <h6>Dashboards</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="index.html">Dashboard</a></li>
+          <li><a class="panel-link " href="dashboard-sales.html">Sales</a></li>
+          <li><a class="panel-link " href="dashboard-analytics.html">Analytics</a></li>
+          <li><a class="panel-link active" href="dashboard-crm.html">CRM</a></li>
+          <li><a class="panel-link " href="dashboard-marketing.html">Marketing</a></li>
+          <li><a class="panel-link " href="dashboard-projects.html">Projects</a></li>
+          <li><a class="panel-link " href="dashboard-finance.html">Finance</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Apps -->
+      <div class="sidebar-panel-section " data-section="apps">
+        <div class="sidebar-panel-header">
+          <h6>Apps</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="apps-calendar.html">Calendar</a></li>
+          <li><a class="panel-link " href="apps-kanban.html">Kanban Board</a></li>
+          <li><a class="panel-link " href="apps-chat.html">Chat</a></li>
+          <li><a class="panel-link " href="apps-contacts.html">Contacts</a></li>
+          <li><a class="panel-link " href="apps-file-manager.html">File Manager</a></li>
+          <li><a class="panel-link " href="apps-email.html">Email</a></li>
+          <li><a class="panel-link " href="apps-todo.html">Todo List</a></li>
+          <li><a class="panel-link " href="apps-support.html">Support Center</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Users -->
+      <div class="sidebar-panel-section " data-section="users">
+        <div class="sidebar-panel-header">
+          <h6>Users</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="users.html">Users List</a></li>
+          <li><a class="panel-link " href="users-view.html">User View</a></li>
+          <li><a class="panel-link " href="users-edit.html">User Edit</a></li>
+          <li><a class="panel-link " href="profile.html">Profile</a></li>
+          <li class="panel-nav-group ">
+            <a class="panel-link panel-group-toggle" href="#" aria-expanded="false">
+              Settings
+              <i class="bi bi-chevron-down panel-arrow"></i>
+            </a>
+            <ul class="panel-subnav ">
+              <li><a class="panel-link " href="settings.html">Account</a></li>
+              <li><a class="panel-link " href="notifications.html">Notifications</a></li>
+              <li><a class="panel-link " href="activity.html">Activity</a></li>
+            </ul>
+          </li>
+          <li><a class="panel-link " href="roles.html">Roles & Permissions</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Components -->
+      <div class="sidebar-panel-section " data-section="components">
+        <div class="sidebar-panel-header">
+          <h6>UI Elements</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li class="panel-nav-group ">
+            <a class="panel-link panel-group-toggle" href="#" aria-expanded="false">
+              Components
+              <i class="bi bi-chevron-down panel-arrow"></i>
+            </a>
+            <ul class="panel-subnav ">
+              <li><a class="panel-link " href="components-alerts.html">Alerts</a></li>
+              <li><a class="panel-link " href="components-accordion.html">Accordion</a></li>
+              <li><a class="panel-link " href="components-badges.html">Badges</a></li>
+              <li><a class="panel-link " href="components-breadcrumbs.html">Breadcrumbs</a></li>
+              <li><a class="panel-link " href="components-buttons.html">Buttons</a></li>
+              <li><a class="panel-link " href="components-cards.html">Cards</a></li>
+              <li><a class="panel-link " href="components-carousel.html">Carousel</a></li>
+              <li><a class="panel-link " href="components-dropdowns.html">Dropdowns</a></li>
+              <li><a class="panel-link " href="components-list-group.html">List Group</a></li>
+              <li><a class="panel-link " href="components-modal.html">Modal</a></li>
+              <li><a class="panel-link " href="components-nav-tabs.html">Navs & Tabs</a></li>
+              <li><a class="panel-link " href="components-offcanvas.html">Offcanvas</a></li>
+              <li><a class="panel-link " href="components-pagination.html">Pagination</a></li>
+              <li><a class="panel-link " href="components-popovers.html">Popovers</a></li>
+              <li><a class="panel-link " href="components-progress.html">Progress</a></li>
+              <li><a class="panel-link " href="components-spinners.html">Spinners</a></li>
+              <li><a class="panel-link " href="components-toasts.html">Toasts</a></li>
+              <li><a class="panel-link " href="components-tooltips.html">Tooltips</a></li>
+            </ul>
+          </li>
+          <li class="panel-nav-group ">
+            <a class="panel-link panel-group-toggle" href="#" aria-expanded="false">
+              Widgets
+              <i class="bi bi-chevron-down panel-arrow"></i>
+            </a>
+            <ul class="panel-subnav ">
+              <li><a class="panel-link " href="widgets.html">Overview</a></li>
+              <li><a class="panel-link " href="widgets-cards.html">Cards</a></li>
+              <li><a class="panel-link " href="widgets-banners.html">Banners</a></li>
+              <li><a class="panel-link " href="widgets-charts.html">Charts</a></li>
+              <li><a class="panel-link " href="widgets-apps.html">Apps</a></li>
+              <li><a class="panel-link " href="widgets-data.html">Data</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Panel: Forms -->
+      <div class="sidebar-panel-section " data-section="forms">
+        <div class="sidebar-panel-header">
+          <h6>Forms</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="forms-elements.html">Form Elements</a></li>
+          <li><a class="panel-link " href="forms-layouts.html">Form Layouts</a></li>
+          <li><a class="panel-link " href="forms-validation.html">Validation</a></li>
+          <li><a class="panel-link " href="forms-wizard.html">Wizard</a></li>
+          <li><a class="panel-link " href="forms-editors.html">Rich Editors</a></li>
+          <li><a class="panel-link " href="forms-pickers.html">Date/Time Pickers</a></li>
+          <li><a class="panel-link " href="forms-select.html">Advanced Select</a></li>
+          <li><a class="panel-link " href="forms-upload.html">File Upload</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Tables -->
+      <div class="sidebar-panel-section " data-section="tables">
+        <div class="sidebar-panel-header">
+          <h6>Tables</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="tables-basic.html">Basic Tables</a></li>
+          <li><a class="panel-link " href="tables-datatables.html">DataTables</a></li>
+          <li><a class="panel-link " href="tables-responsive.html">Responsive Tables</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Charts -->
+      <div class="sidebar-panel-section " data-section="charts">
+        <div class="sidebar-panel-header">
+          <h6>Charts</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="charts-apexcharts.html">ApexCharts</a></li>
+          <li><a class="panel-link " href="charts-chartjs.html">Chart.js</a></li>
+          <li><a class="panel-link " href="charts-echarts.html">ECharts</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Icons -->
+      <div class="sidebar-panel-section " data-section="icons">
+        <div class="sidebar-panel-header">
+          <h6>Icons</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="icons-bootstrap.html">Bootstrap Icons</a></li>
+          <li><a class="panel-link " href="icons-remixicon.html">Remix Icons</a></li>
+          <li><a class="panel-link " href="icons-fontawesome.html">Font Awesome</a></li>
+          <li><a class="panel-link " href="icons-phosphor.html">Phosphor Icons</a></li>
+          <li><a class="panel-link " href="icons-lucide.html">Lucide Icons</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Authentication -->
+      <div class="sidebar-panel-section " data-section="auth">
+        <div class="sidebar-panel-header">
+          <h6>Authentication</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="auth-login.html">Login</a></li>
+          <li><a class="panel-link " href="auth-register.html">Register</a></li>
+          <li><a class="panel-link " href="auth-forgot-password.html">Forgot Password</a></li>
+          <li><a class="panel-link " href="auth-reset-password.html">Reset Password</a></li>
+          <li><a class="panel-link " href="auth-verify-email.html">Email Verification</a></li>
+          <li><a class="panel-link " href="auth-two-factor.html">Two Factor Auth</a></li>
+          <li><a class="panel-link " href="auth-lock-screen.html">Lock Screen</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Pages -->
+      <div class="sidebar-panel-section " data-section="pages">
+        <div class="sidebar-panel-header">
+          <h6>Pages</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="contact.html">Contact</a></li>
+          <li class="panel-nav-group ">
+            <a class="panel-link panel-group-toggle" href="#" aria-expanded="false">
+              Invoices
+              <i class="bi bi-chevron-down panel-arrow"></i>
+            </a>
+            <ul class="panel-subnav ">
+              <li><a class="panel-link " href="invoice-list.html">Invoice List</a></li>
+              <li><a class="panel-link " href="invoice.html">Invoice View</a></li>
+            </ul>
+          </li>
+          <li><a class="panel-link " href="pricing.html">Pricing</a></li>
+          <li><a class="panel-link " href="faq.html">FAQ</a></li>
+          <li class="panel-nav-group ">
+            <a class="panel-link panel-group-toggle" href="#" aria-expanded="false">
+              Error Pages
+              <i class="bi bi-chevron-down panel-arrow"></i>
+            </a>
+            <ul class="panel-subnav ">
+              <li><a class="panel-link " href="error-404.html">404 Not Found</a></li>
+              <li><a class="panel-link " href="error-403.html">403 Forbidden</a></li>
+              <li><a class="panel-link " href="error-500.html">500 Server Error</a></li>
+              <li><a class="panel-link " href="error-maintenance.html">Maintenance</a></li>
+              <li><a class="panel-link " href="error-coming-soon.html">Coming Soon</a></li>
+            </ul>
+          </li>
+          <li><a class="panel-link " href="timeline.html">Timeline</a></li>
+          <li><a class="panel-link " href="search-results.html">Search Results</a></li>
+          <li><a class="panel-link " href="blank.html">Blank Page</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- Sidebar Overlay (Mobile) -->
+  <div class="sidebar-overlay"></div>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="main-content page-dashboard-crm">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">CRM Dashboard</h1>
+        <nav class="breadcrumb">
+          <a href="index.html" class="breadcrumb-item">Home</a>
+          <a href="#" class="breadcrumb-item">Dashboards</a>
+          <span class="breadcrumb-item active">CRM</span>
+        </nav>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="dashboard-grid dashboard-grid-4">
+        <!-- Total Contacts -->
+        <div class="card widget-stat">
+          <div class="widget-stat-header">
+            <div>
+              <div class="widget-stat-value">2,847</div>
+              <div class="widget-stat-label">Total Contacts</div>
+            </div>
+            <div class="widget-stat-icon primary">
+              <i class="bi bi-people"></i>
+            </div>
+          </div>
+          <div class="widget-stat-change positive">
+            <i class="bi bi-arrow-up"></i> 12.5% vs last month
+          </div>
+        </div>
+
+        <!-- Deals Won -->
+        <div class="card widget-stat">
+          <div class="widget-stat-header">
+            <div>
+              <div class="widget-stat-value">156</div>
+              <div class="widget-stat-label">Deals Won</div>
+            </div>
+            <div class="widget-stat-icon success">
+              <i class="bi bi-trophy"></i>
+            </div>
+          </div>
+          <div class="widget-stat-change positive">
+            <i class="bi bi-arrow-up"></i> 8.3% vs last month
+          </div>
+        </div>
+
+        <!-- Pipeline Value -->
+        <div class="card widget-stat">
+          <div class="widget-stat-header">
+            <div>
+              <div class="widget-stat-value">$1.2M</div>
+              <div class="widget-stat-label">Pipeline Value</div>
+            </div>
+            <div class="widget-stat-icon warning">
+              <i class="bi bi-currency-dollar"></i>
+            </div>
+          </div>
+          <div class="widget-stat-change positive">
+            <i class="bi bi-arrow-up"></i> 15.2% vs last month
+          </div>
+        </div>
+
+        <!-- Win Rate -->
+        <div class="card widget-stat">
+          <div class="widget-stat-header">
+            <div>
+              <div class="widget-stat-value">68.5%</div>
+              <div class="widget-stat-label">Win Rate</div>
+            </div>
+            <div class="widget-stat-icon info">
+              <i class="bi bi-percent"></i>
+            </div>
+          </div>
+          <div class="widget-stat-change negative">
+            <i class="bi bi-arrow-down"></i> 2.1% vs last month
+          </div>
+        </div>
+      </div>
+
+      <!-- Sales Pipeline & Deal Sources -->
+      <div class="row g-4 mb-4">
+        <div class="col-12 col-xl-8">
+          <div class="card h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h5 class="card-title mb-0">Sales Pipeline</h5>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-light" data-bs-toggle="dropdown">
+                  <i class="bi bi-three-dots-vertical"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">View Details</a></li>
+                  <li><a class="dropdown-item" href="#">Export</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="pipeline-stages">
+                <div class="pipeline-stage">
+                  <div class="pipeline-stage-header">
+                    <span class="pipeline-stage-name">Lead</span>
+                    <span class="pipeline-stage-count">45</span>
+                  </div>
+                  <div class="pipeline-stage-bar" style="--stage-width: 100%; --stage-color: var(--muted-color);"></div>
+                  <span class="pipeline-stage-value">$180,000</span>
+                </div>
+                <div class="pipeline-stage">
+                  <div class="pipeline-stage-header">
+                    <span class="pipeline-stage-name">Qualified</span>
+                    <span class="pipeline-stage-count">32</span>
+                  </div>
+                  <div class="pipeline-stage-bar" style="--stage-width: 71%; --stage-color: var(--info-color);"></div>
+                  <span class="pipeline-stage-value">$256,000</span>
+                </div>
+                <div class="pipeline-stage">
+                  <div class="pipeline-stage-header">
+                    <span class="pipeline-stage-name">Proposal</span>
+                    <span class="pipeline-stage-count">18</span>
+                  </div>
+                  <div class="pipeline-stage-bar" style="--stage-width: 40%; --stage-color: var(--warning-color);"></div>
+                  <span class="pipeline-stage-value">$324,000</span>
+                </div>
+                <div class="pipeline-stage">
+                  <div class="pipeline-stage-header">
+                    <span class="pipeline-stage-name">Negotiation</span>
+                    <span class="pipeline-stage-count">12</span>
+                  </div>
+                  <div class="pipeline-stage-bar" style="--stage-width: 27%; --stage-color: var(--accent-color);"></div>
+                  <span class="pipeline-stage-value">$288,000</span>
+                </div>
+                <div class="pipeline-stage">
+                  <div class="pipeline-stage-header">
+                    <span class="pipeline-stage-name">Won</span>
+                    <span class="pipeline-stage-count">8</span>
+                  </div>
+                  <div class="pipeline-stage-bar" style="--stage-width: 18%; --stage-color: var(--success-color);"></div>
+                  <span class="pipeline-stage-value">$192,000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-4">
+          <div class="card h-100">
+            <div class="card-header">
+              <h5 class="card-title mb-0">Deal Sources</h5>
+            </div>
+            <div class="card-body">
+              <div id="dealSourcesChart"></div>
+              <div class="chart-legend mt-3">
+                <div class="legend-item">
+                  <span class="legend-dot" style="background-color: var(--accent-color);"></span>
+                  <span class="legend-label">Direct</span>
+                  <span class="legend-value">35%</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot" style="background-color: var(--success-color);"></span>
+                  <span class="legend-label">Referral</span>
+                  <span class="legend-value">28%</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot" style="background-color: var(--warning-color);"></span>
+                  <span class="legend-label">Website</span>
+                  <span class="legend-value">22%</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot" style="background-color: var(--info-color);"></span>
+                  <span class="legend-label">Social</span>
+                  <span class="legend-value">15%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Revenue Trend & Recent Deals -->
+      <div class="row g-4 mb-4">
+        <div class="col-12 col-xl-8">
+          <div class="card h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h5 class="card-title mb-0">Revenue Trend</h5>
+              <div class="btn-group btn-group-sm">
+                <button type="button" class="btn btn-outline-secondary">Monthly</button>
+                <button type="button" class="btn btn-outline-secondary active">Quarterly</button>
+                <button type="button" class="btn btn-outline-secondary">Yearly</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div id="revenueTrendChart" style="height: 320px;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-4">
+          <div class="card h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h5 class="card-title mb-0">Recent Deals</h5>
+              <a href="#" class="btn btn-sm btn-link">View All</a>
+            </div>
+            <div class="card-body p-0">
+              <div class="deal-list">
+                <div class="deal-item">
+                  <div class="deal-info">
+                    <div class="deal-company">TechCorp Inc.</div>
+                    <div class="deal-contact">John Smith</div>
+                  </div>
+                  <div class="deal-meta">
+                    <span class="deal-amount">$45,000</span>
+                    <span class="badge bg-success-subtle text-success">Won</span>
+                  </div>
+                </div>
+                <div class="deal-item">
+                  <div class="deal-info">
+                    <div class="deal-company">Global Solutions</div>
+                    <div class="deal-contact">Sarah Johnson</div>
+                  </div>
+                  <div class="deal-meta">
+                    <span class="deal-amount">$32,500</span>
+                    <span class="badge bg-warning-subtle text-warning">Pending</span>
+                  </div>
+                </div>
+                <div class="deal-item">
+                  <div class="deal-info">
+                    <div class="deal-company">StartupXYZ</div>
+                    <div class="deal-contact">Mike Davis</div>
+                  </div>
+                  <div class="deal-meta">
+                    <span class="deal-amount">$18,750</span>
+                    <span class="badge bg-info-subtle text-info">Proposal</span>
+                  </div>
+                </div>
+                <div class="deal-item">
+                  <div class="deal-info">
+                    <div class="deal-company">Enterprise Co.</div>
+                    <div class="deal-contact">Emily Brown</div>
+                  </div>
+                  <div class="deal-meta">
+                    <span class="deal-amount">$67,200</span>
+                    <span class="badge bg-primary-subtle text-primary">Negotiation</span>
+                  </div>
+                </div>
+                <div class="deal-item">
+                  <div class="deal-info">
+                    <div class="deal-company">DataFlow Ltd.</div>
+                    <div class="deal-contact">Chris Wilson</div>
+                  </div>
+                  <div class="deal-meta">
+                    <span class="deal-amount">$24,800</span>
+                    <span class="badge bg-danger-subtle text-danger">Lost</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Contacts & Upcoming Tasks -->
+      <div class="row g-4 mb-4">
+        <div class="col-12 col-xl-6">
+          <div class="card h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h5 class="card-title mb-0">Top Contacts</h5>
+              <a href="#" class="btn btn-sm btn-primary">
+                <i class="bi bi-plus"></i> Add Contact
+              </a>
+            </div>
+            <div class="card-body p-0">
+              <div class="contact-list">
+                <div class="contact-item">
+                  <img src="assets/img/avatars/avatar-1.webp" alt="Contact" class="contact-avatar">
+                  <div class="contact-info">
+                    <div class="contact-name">Amanda Chen</div>
+                    <div class="contact-company">TechCorp Inc.</div>
+                  </div>
+                  <div class="contact-stats">
+                    <span class="contact-deals">5 deals</span>
+                    <span class="contact-value">$125,000</span>
+                  </div>
+                  <div class="contact-actions">
+                    <button class="btn btn-sm btn-light" title="Email">
+                      <i class="bi bi-envelope"></i>
+                    </button>
+                    <button class="btn btn-sm btn-light" title="Call">
+                      <i class="bi bi-telephone"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <img src="assets/img/avatars/avatar-2.webp" alt="Contact" class="contact-avatar">
+                  <div class="contact-info">
+                    <div class="contact-name">Robert Kim</div>
+                    <div class="contact-company">Global Solutions</div>
+                  </div>
+                  <div class="contact-stats">
+                    <span class="contact-deals">3 deals</span>
+                    <span class="contact-value">$89,500</span>
+                  </div>
+                  <div class="contact-actions">
+                    <button class="btn btn-sm btn-light" title="Email">
+                      <i class="bi bi-envelope"></i>
+                    </button>
+                    <button class="btn btn-sm btn-light" title="Call">
+                      <i class="bi bi-telephone"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <img src="assets/img/avatars/avatar-3.webp" alt="Contact" class="contact-avatar">
+                  <div class="contact-info">
+                    <div class="contact-name">Jessica Taylor</div>
+                    <div class="contact-company">Enterprise Co.</div>
+                  </div>
+                  <div class="contact-stats">
+                    <span class="contact-deals">4 deals</span>
+                    <span class="contact-value">$156,200</span>
+                  </div>
+                  <div class="contact-actions">
+                    <button class="btn btn-sm btn-light" title="Email">
+                      <i class="bi bi-envelope"></i>
+                    </button>
+                    <button class="btn btn-sm btn-light" title="Call">
+                      <i class="bi bi-telephone"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <img src="assets/img/avatars/avatar-4.webp" alt="Contact" class="contact-avatar">
+                  <div class="contact-info">
+                    <div class="contact-name">David Martinez</div>
+                    <div class="contact-company">StartupXYZ</div>
+                  </div>
+                  <div class="contact-stats">
+                    <span class="contact-deals">2 deals</span>
+                    <span class="contact-value">$42,000</span>
+                  </div>
+                  <div class="contact-actions">
+                    <button class="btn btn-sm btn-light" title="Email">
+                      <i class="bi bi-envelope"></i>
+                    </button>
+                    <button class="btn btn-sm btn-light" title="Call">
+                      <i class="bi bi-telephone"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-6">
+          <div class="card h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h5 class="card-title mb-0">Upcoming Tasks</h5>
+              <a href="#" class="btn btn-sm btn-primary">
+                <i class="bi bi-plus"></i> Add Task
+              </a>
+            </div>
+            <div class="card-body p-0">
+              <div class="task-list">
+                <div class="task-item">
+                  <div class="task-checkbox">
+                    <input type="checkbox" id="task1">
+                    <label for="task1"></label>
+                  </div>
+                  <div class="task-info">
+                    <div class="task-title">Follow up with TechCorp</div>
+                    <div class="task-meta">
+                      <span class="task-due text-danger">
+                        <i class="bi bi-clock"></i> Today, 2:00 PM
+                      </span>
+                    </div>
+                  </div>
+                  <span class="badge bg-danger-subtle text-danger">High</span>
+                </div>
+                <div class="task-item">
+                  <div class="task-checkbox">
+                    <input type="checkbox" id="task2">
+                    <label for="task2"></label>
+                  </div>
+                  <div class="task-info">
+                    <div class="task-title">Send proposal to Global Solutions</div>
+                    <div class="task-meta">
+                      <span class="task-due">
+                        <i class="bi bi-clock"></i> Tomorrow, 10:00 AM
+                      </span>
+                    </div>
+                  </div>
+                  <span class="badge bg-warning-subtle text-warning">Medium</span>
+                </div>
+                <div class="task-item">
+                  <div class="task-checkbox">
+                    <input type="checkbox" id="task3">
+                    <label for="task3"></label>
+                  </div>
+                  <div class="task-info">
+                    <div class="task-title">Schedule demo for StartupXYZ</div>
+                    <div class="task-meta">
+                      <span class="task-due">
+                        <i class="bi bi-clock"></i> Jan 22, 3:00 PM
+                      </span>
+                    </div>
+                  </div>
+                  <span class="badge bg-info-subtle text-info">Normal</span>
+                </div>
+                <div class="task-item">
+                  <div class="task-checkbox">
+                    <input type="checkbox" id="task4">
+                    <label for="task4"></label>
+                  </div>
+                  <div class="task-info">
+                    <div class="task-title">Review contract with Enterprise Co.</div>
+                    <div class="task-meta">
+                      <span class="task-due">
+                        <i class="bi bi-clock"></i> Jan 23, 11:00 AM
+                      </span>
+                    </div>
+                  </div>
+                  <span class="badge bg-danger-subtle text-danger">High</span>
+                </div>
+                <div class="task-item">
+                  <div class="task-checkbox">
+                    <input type="checkbox" id="task5">
+                    <label for="task5"></label>
+                  </div>
+                  <div class="task-info">
+                    <div class="task-title">Update CRM records</div>
+                    <div class="task-meta">
+                      <span class="task-due">
+                        <i class="bi bi-clock"></i> Jan 24, 5:00 PM
+                      </span>
+                    </div>
+                  </div>
+                  <span class="badge bg-success-subtle text-success">Low</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Performance -->
+      <div class="row g-4">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h5 class="card-title mb-0">Team Performance</h5>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-light" data-bs-toggle="dropdown">
+                  This Month <i class="bi bi-chevron-down ms-1"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">This Week</a></li>
+                  <li><a class="dropdown-item active" href="#">This Month</a></li>
+                  <li><a class="dropdown-item" href="#">This Quarter</a></li>
+                  <li><a class="dropdown-item" href="#">This Year</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                  <thead>
+                    <tr>
+                      <th>Sales Rep</th>
+                      <th>Deals Closed</th>
+                      <th>Revenue</th>
+                      <th>Win Rate</th>
+                      <th>Progress</th>
+                      <th>Target</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center gap-2">
+                          <img src="assets/img/avatars/avatar-5.webp" alt="" class="rounded-circle" width="36" height="36">
+                          <div>
+                            <div class="fw-medium">Alex Johnson</div>
+                            <small class="text-muted">Senior Sales</small>
+                          </div>
+                        </div>
+                      </td>
+                      <td>24</td>
+                      <td class="fw-semibold">$156,400</td>
+                      <td><span class="text-success">78%</span></td>
+                      <td style="width: 200px;">
+                        <div class="progress" style="height: 6px;">
+                          <div class="progress-bar bg-success" style="width: 92%;"></div>
+                        </div>
+                        <small class="text-muted">92% of target</small>
+                      </td>
+                      <td>$170,000</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center gap-2">
+                          <img src="assets/img/avatars/avatar-6.webp" alt="" class="rounded-circle" width="36" height="36">
+                          <div>
+                            <div class="fw-medium">Sarah Williams</div>
+                            <small class="text-muted">Sales Manager</small>
+                          </div>
+                        </div>
+                      </td>
+                      <td>31</td>
+                      <td class="fw-semibold">$198,200</td>
+                      <td><span class="text-success">82%</span></td>
+                      <td style="width: 200px;">
+                        <div class="progress" style="height: 6px;">
+                          <div class="progress-bar bg-success" style="width: 99%;"></div>
+                        </div>
+                        <small class="text-muted">99% of target</small>
+                      </td>
+                      <td>$200,000</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center gap-2">
+                          <img src="assets/img/avatars/avatar-7.webp" alt="" class="rounded-circle" width="36" height="36">
+                          <div>
+                            <div class="fw-medium">Mike Thompson</div>
+                            <small class="text-muted">Sales Rep</small>
+                          </div>
+                        </div>
+                      </td>
+                      <td>18</td>
+                      <td class="fw-semibold">$89,600</td>
+                      <td><span class="text-warning">65%</span></td>
+                      <td style="width: 200px;">
+                        <div class="progress" style="height: 6px;">
+                          <div class="progress-bar bg-warning" style="width: 75%;"></div>
+                        </div>
+                        <small class="text-muted">75% of target</small>
+                      </td>
+                      <td>$120,000</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center gap-2">
+                          <img src="assets/img/avatars/avatar-8.webp" alt="" class="rounded-circle" width="36" height="36">
+                          <div>
+                            <div class="fw-medium">Emily Davis</div>
+                            <small class="text-muted">Sales Rep</small>
+                          </div>
+                        </div>
+                      </td>
+                      <td>22</td>
+                      <td class="fw-semibold">$134,800</td>
+                      <td><span class="text-success">71%</span></td>
+                      <td style="width: 200px;">
+                        <div class="progress" style="height: 6px;">
+                          <div class="progress-bar bg-primary" style="width: 84%;"></div>
+                        </div>
+                        <small class="text-muted">84% of target</small>
+                      </td>
+                      <td>$160,000</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center gap-2">
+                          <img src="assets/img/avatars/avatar-9.webp" alt="" class="rounded-circle" width="36" height="36">
+                          <div>
+                            <div class="fw-medium">Chris Lee</div>
+                            <small class="text-muted">Junior Sales</small>
+                          </div>
+                        </div>
+                      </td>
+                      <td>12</td>
+                      <td class="fw-semibold">$56,200</td>
+                      <td><span class="text-danger">58%</span></td>
+                      <td style="width: 200px;">
+                        <div class="progress" style="height: 6px;">
+                          <div class="progress-bar bg-danger" style="width: 62%;"></div>
+                        </div>
+                        <small class="text-muted">62% of target</small>
+                      </td>
+                      <td>$90,000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-copyright">
+          &copy; 2026 <a href="#">PowerAdmin</a>. All Rights Reserved.
+        </div>
+        <div class="footer-credits">
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top">
+    <i class="bi bi-arrow-up"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/choices.js/choices.min.js"></script>
+  <script src="assets/vendor/flatpickr/flatpickr.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS Files -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- App Sidebar Toggle (for app pages with sidebars) -->
+  <script src="assets/js/apps-sidebar-toggle.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get CSS custom properties
+      const style = getComputedStyle(document.documentElement);
+      const accentColor = style.getPropertyValue('--accent-color').trim();
+      const successColor = style.getPropertyValue('--success-color').trim();
+      const warningColor = style.getPropertyValue('--warning-color').trim();
+      const infoColor = style.getPropertyValue('--info-color').trim();
+      const mutedColor = style.getPropertyValue('--muted-color').trim();
+      const borderColor = style.getPropertyValue('--border-color').trim();
+      // Deal Sources Donut Chart
+      const dealSourcesOptions = {
+        series: [35, 28, 22, 15],
+        chart: {
+          type: 'donut',
+          height: 240
+        },
+        labels: ['Direct', 'Referral', 'Website', 'Social'],
+        colors: [accentColor, successColor, warningColor, infoColor],
+        plotOptions: {
+          pie: {
+            donut: {
+              size: '70%',
+              labels: {
+                show: true,
+                total: {
+                  show: true,
+                  label: 'Total Deals',
+                  formatter: function() {
+                    return '156';
+                  }
+                }
+              }
+            }
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        legend: {
+          show: false
+        },
+        stroke: {
+          width: 0
+        }
+      };
+      const dealSourcesChart = new ApexCharts(document.querySelector('#dealSourcesChart'), dealSourcesOptions);
+      dealSourcesChart.render();
+      // Revenue Trend Chart
+      const revenueTrendOptions = {
+        series: [{
+          name: 'Revenue',
+          type: 'column',
+          data: [124000, 156000, 189000, 167000, 198000, 223000, 245000, 278000, 256000, 312000, 289000, 334000]
+        }, {
+          name: 'Target',
+          type: 'line',
+          data: [150000, 160000, 170000, 180000, 190000, 200000, 220000, 240000, 260000, 280000, 300000, 320000]
+        }],
+        chart: {
+          height: 320,
+          type: 'line',
+          toolbar: {
+            show: false
+          }
+        },
+        stroke: {
+          width: [0, 3],
+          curve: 'smooth',
+          dashArray: [0, 5]
+        },
+        plotOptions: {
+          bar: {
+            columnWidth: '60%',
+            borderRadius: 4
+          }
+        },
+        colors: [accentColor, successColor],
+        fill: {
+          opacity: [1, 1]
+        },
+        markers: {
+          size: [0, 4]
+        },
+        xaxis: {
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          axisBorder: {
+            show: false
+          },
+          axisTicks: {
+            show: false
+          },
+          labels: {
+            style: {
+              colors: mutedColor
+            }
+          }
+        },
+        yaxis: {
+          labels: {
+            formatter: function(val) {
+              return '$' + (val / 1000) + 'k';
+            },
+            style: {
+              colors: mutedColor
+            }
+          }
+        },
+        grid: {
+          borderColor: borderColor,
+          strokeDashArray: 4
+        },
+        legend: {
+          position: 'top',
+          horizontalAlign: 'right'
+        },
+        tooltip: {
+          y: {
+            formatter: function(val) {
+              return '$' + val.toLocaleString();
+            }
+          }
+        }
+      };
+      const revenueTrendChart = new ApexCharts(document.querySelector('#revenueTrendChart'), revenueTrendOptions);
+      revenueTrendChart.render();
+    });
+  </script>
+</body>
+
+</html>

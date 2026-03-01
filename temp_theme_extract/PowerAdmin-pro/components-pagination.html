@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagination - PowerAdmin</title>
+  <meta name="description" content="PowerAdmin - Bootstrap Admin Template">
+  <meta name="keywords" content="admin, dashboard, bootstrap">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts - Plus Jakarta Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/phosphor-icons/phosphor-icons.css" rel="stylesheet">
+  <link href="assets/vendor/lucide-icons/lucide.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/choices.js/choices.min.css" rel="stylesheet">
+  <link href="assets/vendor/flatpickr/flatpickr.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+    * Template Name: PowerAdmin - Bootstrap Admin Template
+    * Template URL: https://bootstrapmade.com/power-admin-template/
+    * Updated: Feb 26 2026 with Bootstrap v5.3.8
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <!-- Header Left -->
+    <div class="header-left">
+      <a href="index.html" class="header-logo">
+        <img src="assets/img/logo.webp" alt="PowerAdmin">
+        <span>PowerAdmin</span>
+      </a>
+      <button class="sidebar-toggle" title="Toggle Sidebar">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Apps Shortcuts -->
+      <div class="header-action dropdown apps-dropdown">
+        <button class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="Apps">
+          <i class="bi bi-grid-3x3-gap"></i>
+        </button>
+        <div class="dropdown-menu">
+          <div class="apps-dropdown-header">
+            <h6>Quick Access</h6>
+          </div>
+          <div class="apps-grid">
+            <a href="apps-chat.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: color-mix(in srgb, var(--accent-color), transparent 88%); color: var(--accent-color);">
+                <i class="bi bi-chat-dots"></i>
+              </div>
+              <span>Chat</span>
+            </a>
+            <a href="apps-email.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: var(--info-color-light); color: var(--info-color);">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <span>Email</span>
+            </a>
+            <a href="apps-calendar.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: var(--success-color-light); color: var(--success-color);">
+                <i class="bi bi-calendar-event"></i>
+              </div>
+              <span>Calendar</span>
+            </a>
+            <a href="apps-kanban.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: var(--warning-color-light); color: var(--warning-color);">
+                <i class="bi bi-kanban"></i>
+              </div>
+              <span>Kanban</span>
+            </a>
+            <a href="apps-file-manager.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: var(--danger-color-light); color: var(--danger-color);">
+                <i class="bi bi-folder"></i>
+              </div>
+              <span>Files</span>
+            </a>
+            <a href="apps-todo.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: color-mix(in srgb, var(--accent-color), transparent 88%); color: var(--accent-color);">
+                <i class="bi bi-check2-square"></i>
+              </div>
+              <span>Todo</span>
+            </a>
+            <a href="apps-contacts.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: var(--info-color-light); color: var(--info-color);">
+                <i class="bi bi-people"></i>
+              </div>
+              <span>Contacts</span>
+            </a>
+            <a href="apps-support.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: var(--success-color-light); color: var(--success-color);">
+                <i class="bi bi-headset"></i>
+              </div>
+              <span>Support</span>
+            </a>
+            <a href="invoice-list.html" class="apps-grid-item">
+              <div class="apps-grid-icon" style="background: var(--warning-color-light); color: var(--warning-color);">
+                <i class="bi bi-receipt"></i>
+              </div>
+              <span>Invoices</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Search (Desktop) -->
+    <div class="header-search">
+      <form class="search-form" action="search-results.html" method="GET">
+        <i class="bi bi-search search-icon"></i>
+        <input type="search" name="q" placeholder="Search anything..." autocomplete="off">
+        <kbd class="search-shortcut">/</kbd>
+      </form>
+    </div>
+
+    <!-- Header Right -->
+    <div class="header-right">
+      <!-- Desktop Actions (hidden on mobile, shown in mobile menu) -->
+      <div class="header-actions-desktop">
+
+        <!-- Theme Toggle -->
+        <button class="header-action theme-toggle" title="Toggle Theme">
+          <i class="ph ph-moon theme-icon-dark"></i>
+          <i class="ph ph-sun theme-icon-light"></i>
+        </button>
+
+        <!-- Header Divider -->
+        <div class="header-divider"></div>
+
+        <!-- Messages -->
+        <div class="header-action dropdown messages-dropdown">
+          <button class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="Messages">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge">2</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <div class="messages-header">
+              <h6>Messages</h6>
+              <a href="apps-chat.html">View All</a>
+            </div>
+            <div class="messages-list">
+              <a href="apps-chat.html" class="message-item unread">
+                <img src="assets/img/avatars/avatar-2.webp" alt="" class="message-avatar">
+                <div class="message-content">
+                  <div class="message-top">
+                    <span class="message-sender">Sarah Connor</span>
+                    <span class="message-time">2m</span>
+                  </div>
+                  <div class="message-text">Hey, can you review the new designs I sent?</div>
+                </div>
+              </a>
+              <a href="apps-chat.html" class="message-item unread">
+                <img src="assets/img/avatars/avatar-3.webp" alt="" class="message-avatar">
+                <div class="message-content">
+                  <div class="message-top">
+                    <span class="message-sender">Mike Chen</span>
+                    <span class="message-time">15m</span>
+                  </div>
+                  <div class="message-text">The deployment is complete. All tests passing.</div>
+                </div>
+              </a>
+              <a href="apps-chat.html" class="message-item">
+                <img src="assets/img/avatars/avatar-4.webp" alt="" class="message-avatar">
+                <div class="message-content">
+                  <div class="message-top">
+                    <span class="message-sender">Emily Park</span>
+                    <span class="message-time">1h</span>
+                  </div>
+                  <div class="message-text">Meeting rescheduled to 3 PM tomorrow</div>
+                </div>
+              </a>
+              <a href="apps-chat.html" class="message-item">
+                <img src="assets/img/avatars/avatar-5.webp" alt="" class="message-avatar">
+                <div class="message-content">
+                  <div class="message-top">
+                    <span class="message-sender">David Lee</span>
+                    <span class="message-time">3h</span>
+                  </div>
+                  <div class="message-text">Thanks for the quick turnaround on that!</div>
+                </div>
+              </a>
+            </div>
+            <div class="messages-footer">
+              <a href="apps-chat.html">See all messages</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="header-action dropdown notification-dropdown">
+          <button class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="Notifications">
+            <i class="bi bi-bell"></i>
+            <span class="badge">3</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <div class="notification-header">
+              <h6>Notifications</h6>
+              <a href="#" data-notification-action="mark-all-read">Mark all read</a>
+            </div>
+            <div class="notification-list">
+              <div class="notification-item unread">
+                <div class="notification-icon success">
+                  <i class="bi bi-check-circle"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-title">Order Completed</div>
+                  <div class="notification-text">Your order #12345 has been delivered</div>
+                  <div class="notification-time"><i class="bi bi-clock"></i> 5 min ago</div>
+                </div>
+              </div>
+              <div class="notification-item unread">
+                <div class="notification-icon warning">
+                  <i class="bi bi-exclamation-triangle"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-title">Low Storage</div>
+                  <div class="notification-text">Server storage is running low (85% used)</div>
+                  <div class="notification-time"><i class="bi bi-clock"></i> 1 hour ago</div>
+                </div>
+              </div>
+              <div class="notification-item unread">
+                <div class="notification-icon primary">
+                  <i class="bi bi-person-plus"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-title">New User Registered</div>
+                  <div class="notification-text">Alex Thompson just created an account</div>
+                  <div class="notification-time"><i class="bi bi-clock"></i> 2 hours ago</div>
+                </div>
+              </div>
+              <div class="notification-item">
+                <div class="notification-icon info">
+                  <i class="bi bi-info-circle"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-title">System Update</div>
+                  <div class="notification-text">Version 2.4.0 is available for update</div>
+                  <div class="notification-time"><i class="bi bi-clock"></i> 5 hours ago</div>
+                </div>
+              </div>
+              <div class="notification-item">
+                <div class="notification-icon danger">
+                  <i class="bi bi-shield-exclamation"></i>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-title">Security Alert</div>
+                  <div class="notification-text">Unusual login attempt detected from new IP</div>
+                  <div class="notification-time"><i class="bi bi-clock"></i> Yesterday</div>
+                </div>
+              </div>
+            </div>
+            <div class="notification-footer">
+              <a href="notifications.html">View all notifications</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Dropdown -->
+        <div class="header-action dropdown user-dropdown">
+          <button class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="assets/img/profile-img.webp" alt="User" class="avatar">
+            <div class="user-info">
+              <span class="user-name">John Doe</span>
+              <span class="user-role">Administrator</span>
+            </div>
+            <i class="bi bi-chevron-down user-arrow"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <div class="user-dropdown-header">
+              <img src="assets/img/profile-img.webp" alt="User" class="user-dropdown-avatar">
+              <div class="user-dropdown-info">
+                <div class="user-dropdown-name">John Doe</div>
+                <div class="user-dropdown-email">john.doe@example.com</div>
+              </div>
+              <span class="user-dropdown-status"></span>
+            </div>
+            <div class="user-dropdown-body">
+              <a class="user-dropdown-item" href="profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+              <a class="user-dropdown-item" href="apps-chat.html">
+                <i class="bi bi-chat-left-text"></i>
+                <span>Messages</span>
+                <span class="user-dropdown-badge">2</span>
+              </a>
+              <a class="user-dropdown-item" href="apps-todo.html">
+                <i class="bi bi-check2-square"></i>
+                <span>My Tasks</span>
+              </a>
+            </div>
+            <div class="user-dropdown-body user-dropdown-section">
+              <a class="user-dropdown-item" href="settings.html">
+                <i class="bi bi-gear"></i>
+                <span>Settings</span>
+              </a>
+              <a class="user-dropdown-item" href="activity.html">
+                <i class="bi bi-clock-history"></i>
+                <span>Activity Log</span>
+              </a>
+            </div>
+            <div class="user-dropdown-footer">
+              <a class="user-dropdown-item user-dropdown-logout" href="auth-login.html">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Actions (visible only on mobile) -->
+      <div class="header-actions-mobile">
+        <!-- Search Toggle (Mobile) -->
+        <button class="header-action search-toggle" title="Search">
+          <i class="bi bi-search"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="header-action mobile-menu-toggle" title="More">
+          <i class="bi bi-three-dots-vertical"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Search -->
+  <div class="mobile-search">
+    <form class="search-form" action="search-results.html" method="GET">
+      <input type="search" name="q" placeholder="Search..." autocomplete="off">
+      <button type="submit"><i class="bi bi-search"></i></button>
+    </form>
+  </div>
+
+  <!-- Mobile Header Menu -->
+  <div class="mobile-header-menu">
+    <div class="mobile-header-menu-content">
+      <!-- Theme Toggle -->
+      <button class="mobile-menu-item theme-toggle" title="Toggle Theme">
+        <i class="ph ph-moon theme-icon-dark"></i>
+        <i class="ph ph-sun theme-icon-light"></i>
+        <span class="mobile-menu-label">Theme</span>
+      </button>
+
+      <!-- Chat -->
+      <a href="apps-chat.html" class="mobile-menu-item">
+        <i class="bi bi-chat-left-text"></i>
+        <span class="badge">2</span>
+        <span class="mobile-menu-label">Messages</span>
+      </a>
+
+      <!-- Notifications -->
+      <a href="notifications.html" class="mobile-menu-item">
+        <i class="bi bi-bell"></i>
+        <span class="badge">3</span>
+        <span class="mobile-menu-label">Alerts</span>
+      </a>
+
+      <!-- Profile -->
+      <a href="profile.html" class="mobile-menu-item">
+        <i class="bi bi-person"></i>
+        <span class="mobile-menu-label">Profile</span>
+      </a>
+
+      <!-- Settings -->
+      <a href="settings.html" class="mobile-menu-item">
+        <i class="bi bi-gear"></i>
+        <span class="mobile-menu-label">Settings</span>
+      </a>
+
+      <!-- Sign Out -->
+      <a href="auth-login.html" class="mobile-menu-item mobile-menu-item-danger">
+        <i class="bi bi-box-arrow-right"></i>
+        <span class="mobile-menu-label">Sign Out</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <!-- Icon Strip -->
+    <div class="sidebar-strip">
+      <div class="sidebar-strip-logo">
+        <a href="index.html">
+          <img src="assets/img/logo.webp" alt="PowerAdmin">
+        </a>
+      </div>
+
+      <nav class="sidebar-strip-nav">
+        <ul class="strip-menu">
+          <li>
+            <button class="strip-item " data-panel="dashboards" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Dashboards">
+              <i class="ph ph-squares-four"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="apps" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Apps">
+              <i class="ph ph-rocket-launch"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="users" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Users">
+              <i class="ph ph-users-three"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item active" data-panel="components" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="UI Elements">
+              <i class="ph ph-puzzle-piece"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="forms" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Forms">
+              <i class="ph ph-textbox"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="tables" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tables">
+              <i class="ph ph-table"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="charts" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Charts">
+              <i class="ph ph-chart-line-up"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="icons" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Icons">
+              <i class="ph ph-diamond"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="auth" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Authentication">
+              <i class="ph ph-shield-check"></i>
+            </button>
+          </li>
+          <li>
+            <button class="strip-item " data-panel="pages" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Pages">
+              <i class="ph ph-file-text"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-strip-bottom">
+        <a href="notifications.html" class="strip-item" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Notifications">
+          <i class="bi bi-bell"></i>
+        </a>
+        <a href="settings.html" class="strip-item" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Settings">
+          <i class="bi bi-gear"></i>
+        </a>
+        <a href="profile.html" class="sidebar-strip-avatar" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Profile">
+          <img src="assets/img/profile-img.webp" alt="User">
+        </a>
+      </div>
+    </div>
+
+    <!-- Nav Panel -->
+    <div class="sidebar-panel">
+
+      <!-- Panel: Dashboards -->
+      <div class="sidebar-panel-section " data-section="dashboards">
+        <div class="sidebar-panel-header">
+          <h6>Dashboards</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="index.html">Dashboard</a></li>
+          <li><a class="panel-link " href="dashboard-sales.html">Sales</a></li>
+          <li><a class="panel-link " href="dashboard-analytics.html">Analytics</a></li>
+          <li><a class="panel-link " href="dashboard-crm.html">CRM</a></li>
+          <li><a class="panel-link " href="dashboard-marketing.html">Marketing</a></li>
+          <li><a class="panel-link " href="dashboard-projects.html">Projects</a></li>
+          <li><a class="panel-link " href="dashboard-finance.html">Finance</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Apps -->
+      <div class="sidebar-panel-section " data-section="apps">
+        <div class="sidebar-panel-header">
+          <h6>Apps</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="apps-calendar.html">Calendar</a></li>
+          <li><a class="panel-link " href="apps-kanban.html">Kanban Board</a></li>
+          <li><a class="panel-link " href="apps-chat.html">Chat</a></li>
+          <li><a class="panel-link " href="apps-contacts.html">Contacts</a></li>
+          <li><a class="panel-link " href="apps-file-manager.html">File Manager</a></li>
+          <li><a class="panel-link " href="apps-email.html">Email</a></li>
+          <li><a class="panel-link " href="apps-todo.html">Todo List</a></li>
+          <li><a class="panel-link " href="apps-support.html">Support Center</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Users -->
+      <div class="sidebar-panel-section " data-section="users">
+        <div class="sidebar-panel-header">
+          <h6>Users</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="users.html">Users List</a></li>
+          <li><a class="panel-link " href="users-view.html">User View</a></li>
+          <li><a class="panel-link " href="users-edit.html">User Edit</a></li>
+          <li><a class="panel-link " href="profile.html">Profile</a></li>
+          <li class="panel-nav-group ">
+            <a class="panel-link panel-group-toggle" href="#" aria-expanded="false">
+              Settings
+              <i class="bi bi-chevron-down panel-arrow"></i>
+            </a>
+            <ul class="panel-subnav ">
+              <li><a class="panel-link " href="settings.html">Account</a></li>
+              <li><a class="panel-link " href="notifications.html">Notifications</a></li>
+              <li><a class="panel-link " href="activity.html">Activity</a></li>
+            </ul>
+          </li>
+          <li><a class="panel-link " href="roles.html">Roles & Permissions</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Components -->
+      <div class="sidebar-panel-section active" data-section="components">
+        <div class="sidebar-panel-header">
+          <h6>UI Elements</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li class="panel-nav-group open">
+            <a class="panel-link panel-group-toggle" href="#" aria-expanded="true">
+              Components
+              <i class="bi bi-chevron-down panel-arrow"></i>
+            </a>
+            <ul class="panel-subnav show">
+              <li><a class="panel-link " href="components-alerts.html">Alerts</a></li>
+              <li><a class="panel-link " href="components-accordion.html">Accordion</a></li>
+              <li><a class="panel-link " href="components-badges.html">Badges</a></li>
+              <li><a class="panel-link " href="components-breadcrumbs.html">Breadcrumbs</a></li>
+              <li><a class="panel-link " href="components-buttons.html">Buttons</a></li>
+              <li><a class="panel-link " href="components-cards.html">Cards</a></li>
+              <li><a class="panel-link " href="components-carousel.html">Carousel</a></li>
+              <li><a class="panel-link " href="components-dropdowns.html">Dropdowns</a></li>
+              <li><a class="panel-link " href="components-list-group.html">List Group</a></li>
+              <li><a class="panel-link " href="components-modal.html">Modal</a></li>
+              <li><a class="panel-link " href="components-nav-tabs.html">Navs & Tabs</a></li>
+              <li><a class="panel-link " href="components-offcanvas.html">Offcanvas</a></li>
+              <li><a class="panel-link active" href="components-pagination.html">Pagination</a></li>
+              <li><a class="panel-link " href="components-popovers.html">Popovers</a></li>
+              <li><a class="panel-link " href="components-progress.html">Progress</a></li>
+              <li><a class="panel-link " href="components-spinners.html">Spinners</a></li>
+              <li><a class="panel-link " href="components-toasts.html">Toasts</a></li>
+              <li><a class="panel-link " href="components-tooltips.html">Tooltips</a></li>
+            </ul>
+          </li>
+          <li class="panel-nav-group ">
+            <a class="panel-link panel-group-toggle" href="#" aria-expanded="false">
+              Widgets
+              <i class="bi bi-chevron-down panel-arrow"></i>
+            </a>
+            <ul class="panel-subnav ">
+              <li><a class="panel-link " href="widgets.html">Overview</a></li>
+              <li><a class="panel-link " href="widgets-cards.html">Cards</a></li>
+              <li><a class="panel-link " href="widgets-banners.html">Banners</a></li>
+              <li><a class="panel-link " href="widgets-charts.html">Charts</a></li>
+              <li><a class="panel-link " href="widgets-apps.html">Apps</a></li>
+              <li><a class="panel-link " href="widgets-data.html">Data</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Panel: Forms -->
+      <div class="sidebar-panel-section " data-section="forms">
+        <div class="sidebar-panel-header">
+          <h6>Forms</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="forms-elements.html">Form Elements</a></li>
+          <li><a class="panel-link " href="forms-layouts.html">Form Layouts</a></li>
+          <li><a class="panel-link " href="forms-validation.html">Validation</a></li>
+          <li><a class="panel-link " href="forms-wizard.html">Wizard</a></li>
+          <li><a class="panel-link " href="forms-editors.html">Rich Editors</a></li>
+          <li><a class="panel-link " href="forms-pickers.html">Date/Time Pickers</a></li>
+          <li><a class="panel-link " href="forms-select.html">Advanced Select</a></li>
+          <li><a class="panel-link " href="forms-upload.html">File Upload</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Tables -->
+      <div class="sidebar-panel-section " data-section="tables">
+        <div class="sidebar-panel-header">
+          <h6>Tables</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="tables-basic.html">Basic Tables</a></li>
+          <li><a class="panel-link " href="tables-datatables.html">DataTables</a></li>
+          <li><a class="panel-link " href="tables-responsive.html">Responsive Tables</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Charts -->
+      <div class="sidebar-panel-section " data-section="charts">
+        <div class="sidebar-panel-header">
+          <h6>Charts</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="charts-apexcharts.html">ApexCharts</a></li>
+          <li><a class="panel-link " href="charts-chartjs.html">Chart.js</a></li>
+          <li><a class="panel-link " href="charts-echarts.html">ECharts</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Icons -->
+      <div class="sidebar-panel-section " data-section="icons">
+        <div class="sidebar-panel-header">
+          <h6>Icons</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="icons-bootstrap.html">Bootstrap Icons</a></li>
+          <li><a class="panel-link " href="icons-remixicon.html">Remix Icons</a></li>
+          <li><a class="panel-link " href="icons-fontawesome.html">Font Awesome</a></li>
+          <li><a class="panel-link " href="icons-phosphor.html">Phosphor Icons</a></li>
+          <li><a class="panel-link " href="icons-lucide.html">Lucide Icons</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Authentication -->
+      <div class="sidebar-panel-section " data-section="auth">
+        <div class="sidebar-panel-header">
+          <h6>Authentication</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="auth-login.html">Login</a></li>
+          <li><a class="panel-link " href="auth-register.html">Register</a></li>
+          <li><a class="panel-link " href="auth-forgot-password.html">Forgot Password</a></li>
+          <li><a class="panel-link " href="auth-reset-password.html">Reset Password</a></li>
+          <li><a class="panel-link " href="auth-verify-email.html">Email Verification</a></li>
+          <li><a class="panel-link " href="auth-two-factor.html">Two Factor Auth</a></li>
+          <li><a class="panel-link " href="auth-lock-screen.html">Lock Screen</a></li>
+        </ul>
+      </div>
+
+      <!-- Panel: Pages -->
+      <div class="sidebar-panel-section " data-section="pages">
+        <div class="sidebar-panel-header">
+          <h6>Pages</h6>
+          <button class="sidebar-panel-close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <ul class="panel-nav">
+          <li><a class="panel-link " href="contact.html">Contact</a></li>
+          <li class="panel-nav-group ">
+            <a class="panel-link panel-group-toggle" href="#" aria-expanded="false">
+              Invoices
+              <i class="bi bi-chevron-down panel-arrow"></i>
+            </a>
+            <ul class="panel-subnav ">
+              <li><a class="panel-link " href="invoice-list.html">Invoice List</a></li>
+              <li><a class="panel-link " href="invoice.html">Invoice View</a></li>
+            </ul>
+          </li>
+          <li><a class="panel-link " href="pricing.html">Pricing</a></li>
+          <li><a class="panel-link " href="faq.html">FAQ</a></li>
+          <li class="panel-nav-group ">
+            <a class="panel-link panel-group-toggle" href="#" aria-expanded="false">
+              Error Pages
+              <i class="bi bi-chevron-down panel-arrow"></i>
+            </a>
+            <ul class="panel-subnav ">
+              <li><a class="panel-link " href="error-404.html">404 Not Found</a></li>
+              <li><a class="panel-link " href="error-403.html">403 Forbidden</a></li>
+              <li><a class="panel-link " href="error-500.html">500 Server Error</a></li>
+              <li><a class="panel-link " href="error-maintenance.html">Maintenance</a></li>
+              <li><a class="panel-link " href="error-coming-soon.html">Coming Soon</a></li>
+            </ul>
+          </li>
+          <li><a class="panel-link " href="timeline.html">Timeline</a></li>
+          <li><a class="panel-link " href="search-results.html">Search Results</a></li>
+          <li><a class="panel-link " href="blank.html">Blank Page</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- Sidebar Overlay (Mobile) -->
+  <div class="sidebar-overlay"></div>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="main-content page-components-pagination">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">Pagination</h1>
+        <nav class="breadcrumb">
+          <a href="index.html" class="breadcrumb-item">Home</a>
+          <a href="#" class="breadcrumb-item">Components</a>
+          <span class="breadcrumb-item active">Pagination</span>
+        </nav>
+      </div>
+
+      <!-- Basic Pagination -->
+      <section class="section">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="card h-100">
+              <div class="card-header">
+                <h5 class="card-title">Basic Pagination</h5>
+                <p class="card-subtitle">Simple pagination navigation</p>
+              </div>
+              <div class="card-body">
+                <nav>
+                  <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card h-100">
+              <div class="card-header">
+                <h5 class="card-title">With Icons</h5>
+                <p class="card-subtitle">Navigation with arrow icons</p>
+              </div>
+              <div class="card-body">
+                <nav>
+                  <ul class="pagination">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <i class="bi bi-chevron-left"></i>
+                      </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <i class="bi bi-chevron-right"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Active & Disabled States -->
+      <section class="section">
+        <h5 class="section-title mb-3">States &amp; Sizes</h5>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="card h-100">
+              <div class="card-header">
+                <h5 class="card-title">Active &amp; Disabled</h5>
+                <p class="card-subtitle">Different pagination states</p>
+              </div>
+              <div class="card-body">
+                <nav>
+                  <ul class="pagination">
+                    <li class="page-item disabled">
+                      <a class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active" aria-current="page">
+                      <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">Next</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card h-100">
+              <div class="card-header">
+                <h5 class="card-title">Pagination Sizes</h5>
+                <p class="card-subtitle">Small, default, and large sizes</p>
+              </div>
+              <div class="card-body">
+                <h6 class="small text-muted text-uppercase mb-2">Small</h6>
+                <nav>
+                  <ul class="pagination pagination-sm mb-3">
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  </ul>
+                </nav>
+
+                <h6 class="small text-muted text-uppercase mb-2">Default</h6>
+                <nav>
+                  <ul class="pagination mb-3">
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  </ul>
+                </nav>
+
+                <h6 class="small text-muted text-uppercase mb-2">Large</h6>
+                <nav>
+                  <ul class="pagination pagination-lg mb-0">
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Alignment -->
+      <section class="section">
+        <h5 class="section-title mb-3">Alignment</h5>
+        <div class="row g-4">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title">Pagination Alignment</h5>
+                <p class="card-subtitle">Start, center, and end alignment</p>
+              </div>
+              <div class="card-body">
+                <h6 class="small text-muted text-uppercase mb-2">Start (Default)</h6>
+                <nav>
+                  <ul class="pagination mb-4">
+                    <li class="page-item disabled"><a class="page-link">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
+
+                <h6 class="small text-muted text-uppercase mb-2">Center</h6>
+                <nav>
+                  <ul class="pagination justify-content-center mb-4">
+                    <li class="page-item disabled"><a class="page-link">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
+
+                <h6 class="small text-muted text-uppercase mb-2">End</h6>
+                <nav>
+                  <ul class="pagination justify-content-end mb-0">
+                    <li class="page-item disabled"><a class="page-link">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Advanced Examples -->
+      <section class="section">
+        <h5 class="section-title mb-3">Advanced Examples</h5>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="card h-100">
+              <div class="card-header">
+                <h5 class="card-title">With Ellipsis</h5>
+                <p class="card-subtitle">Truncated pagination for many pages</p>
+              </div>
+              <div class="card-body">
+                <nav>
+                  <ul class="pagination">
+                    <li class="page-item">
+                      <a class="page-link" href="#"><i class="bi bi-chevron-double-left"></i></a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item disabled"><a class="page-link">...</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                    <li class="page-item disabled"><a class="page-link">...</a></li>
+                    <li class="page-item"><a class="page-link" href="#">20</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#"><i class="bi bi-chevron-double-right"></i></a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card h-100">
+              <div class="card-header">
+                <h5 class="card-title">With Page Info</h5>
+                <p class="card-subtitle">Pagination with current page indicator</p>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="text-muted">Showing 1-10 of 100 results</span>
+                  <nav>
+                    <ul class="pagination mb-0">
+                      <li class="page-item disabled">
+                        <a class="page-link"><i class="bi bi-chevron-left"></i></a>
+                      </li>
+                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Real-World Examples -->
+      <section class="section">
+        <h5 class="section-title mb-3">Real-World Examples</h5>
+        <div class="row g-4">
+          <!-- Table Pagination -->
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title">Data Table Pagination</h5>
+                <p class="card-subtitle">Pagination with items per page selector</p>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover mb-0">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>john@example.com</td>
+                        <td><span class="badge bg-success">Active</span></td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Jane Smith</td>
+                        <td>jane@example.com</td>
+                        <td><span class="badge bg-success">Active</span></td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Bob Johnson</td>
+                        <td>bob@example.com</td>
+                        <td><span class="badge bg-warning">Pending</span></td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Alice Brown</td>
+                        <td>alice@example.com</td>
+                        <td><span class="badge bg-success">Active</span></td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Charlie Wilson</td>
+                        <td>charlie@example.com</td>
+                        <td><span class="badge bg-secondary">Inactive</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                  <div class="d-flex align-items-center gap-2">
+                    <label class="text-muted mb-0">Show</label>
+                    <select class="form-select form-select-sm" style="width: auto;">
+                      <option>10</option>
+                      <option>25</option>
+                      <option>50</option>
+                      <option>100</option>
+                    </select>
+                    <span class="text-muted">entries</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-3">
+                    <span class="text-muted">Showing 1 to 5 of 47 entries</span>
+                    <nav>
+                      <ul class="pagination pagination-sm mb-0">
+                        <li class="page-item disabled"><a class="page-link">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Simple Prev/Next -->
+          <div class="col-lg-6">
+            <div class="card h-100">
+              <div class="card-header">
+                <h5 class="card-title">Simple Prev/Next</h5>
+                <p class="card-subtitle">Blog post navigation style</p>
+              </div>
+              <div class="card-body">
+                <nav class="d-flex justify-content-between">
+                  <a href="#" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left me-1"></i> Previous Post
+                  </a>
+                  <a href="#" class="btn btn-outline-secondary">
+                    Next Post <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page Jump -->
+          <div class="col-lg-6">
+            <div class="card h-100">
+              <div class="card-header">
+                <h5 class="card-title">With Page Jump</h5>
+                <p class="card-subtitle">Direct page navigation input</p>
+              </div>
+              <div class="card-body">
+                <div class="d-flex align-items-center gap-3">
+                  <nav>
+                    <ul class="pagination mb-0">
+                      <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a></li>
+                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+                    </ul>
+                  </nav>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="text-muted text-nowrap">Go to</span>
+                    <input type="number" class="form-control form-control-sm" style="width: 60px;" min="1" max="10" value="1">
+                    <span class="text-muted">of 10</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-copyright">
+          &copy; 2026 <a href="#">PowerAdmin</a>. All Rights Reserved.
+        </div>
+        <div class="footer-credits">
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top">
+    <i class="bi bi-arrow-up"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/choices.js/choices.min.js"></script>
+  <script src="assets/vendor/flatpickr/flatpickr.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS Files -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- App Sidebar Toggle (for app pages with sidebars) -->
+  <script src="assets/js/apps-sidebar-toggle.js"></script>
+
+</body>
+
+</html>
