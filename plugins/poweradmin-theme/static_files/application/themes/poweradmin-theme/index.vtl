@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Managed dotCMS Hosting - PowerHost</title>
+
+  <!-- Favicons -->
+  <link href="${DOT_THEME_PATH}assets/img/favicon.png" rel="icon">
+  <link href="${DOT_THEME_PATH}assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="${DOT_THEME_PATH}assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="${DOT_THEME_PATH}assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="${DOT_THEME_PATH}assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="${DOT_THEME_PATH}assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="${DOT_THEME_PATH}assets/vendor/phosphor-icons/phosphor-icons.css" rel="stylesheet">
+  <link href="${DOT_THEME_PATH}assets/vendor/lucide-icons/lucide.css" rel="stylesheet">
+  <link href="${DOT_THEME_PATH}assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="${DOT_THEME_PATH}assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="${DOT_THEME_PATH}assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="${DOT_THEME_PATH}assets/vendor/choices.js/choices.min.css" rel="stylesheet">
+  <link href="${DOT_THEME_PATH}assets/vendor/flatpickr/flatpickr.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="${DOT_THEME_PATH}assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Custom Marketing Styles override */
+    .hero-section {
+      padding: 100px 0;
+      text-align: center;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #012970;
+    }
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: #6c757d;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-button {
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .value-prop-card {
+      padding: 40px;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      height: 100%;
+      transition: transform 0.3s ease;
+    }
+    .value-prop-card:hover {
+      transform: translateY(-10px);
+    }
+    .icon-box {
+      font-size: 3rem;
+      color: #4154f1;
+      margin-bottom: 20px;
+    }
+    .pricing-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 20px;
+      padding: 40px;
+      background: white;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .pricing-card.featured {
+      border-color: #4154f1;
+      box-shadow: 0 10px 40px rgba(65, 84, 241, 0.1);
+      transform: scale(1.05);
+      z-index: 2;
+    }
+    .price-tag {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #012970;
+      margin: 20px 0;
+    }
+    .price-period {
+      font-size: 1rem;
+      color: #6c757d;
+      font-weight: 400;
+    }
+  </style>
+</head>
+
+<body>
+  #dotParse("//application/vtl/poweradmin-theme/header.vtl")
+
+  <!-- Main Content -->
+  <main class="main" style="margin-left: 0; margin-top: 60px;"> <!-- Override sidebar margin for full width -->
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="hero-title">Enterprise-Grade Web Performance.<br>Zero Headaches.</h1>
+        <p class="hero-subtitle">Stop wrestling with WordPress plugins. Get secure, scalable, and lightning-fast dotCMS hosting managed by experts.</p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#pricing" class="btn btn-primary cta-button">Start Your Project</a>
+          <a href="#features" class="btn btn-outline-secondary cta-button">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Props -->
+    <section id="features" class="section py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="value-prop-card">
+              <div class="icon-box"><i class="bi bi-lightning-charge"></i></div>
+              <h3>Blazing Fast Speed</h3>
+              <p>Your site loads in milliseconds, not seconds. Optimized specifically for dotCMS with advanced caching and CDN integration. Google (and your users) will love it.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="value-prop-card">
+              <div class="icon-box"><i class="bi bi-shield-check"></i></div>
+              <h3>Bank-Level Security</h3>
+              <p>Forget about "plugin vulnerabilities." We provide enterprise-grade security monitoring, daily backups, and SSL certificates out of the box.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="value-prop-card">
+              <div class="icon-box"><i class="bi bi-graph-up-arrow"></i></div>
+              <h3>Infinite Scalability</h3>
+              <p>From 100 to 1 million visitors. Whether you are a startup or an enterprise, our infrastructure grows with you automatically.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section py-5 bg-light">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2>Simple, Transparent Pricing</h2>
+          <p>Choose the plan that fits your growth.</p>
+        </div>
+        <div class="row g-4 align-items-center">
+          <!-- Starter -->
+          <div class="col-md-4">
+            <div class="pricing-card">
+              <h3>Starter</h3>
+              <div class="price-tag">$49<span class="price-period">/mo</span></div>
+              <ul class="list-unstyled mb-4 text-start">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Managed Updates</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Daily Backups</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Free SSL Certificate</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Email Support</li>
+              </ul>
+              <a href="#" class="btn btn-outline-primary w-100 rounded-pill">Get Started</a>
+            </div>
+          </div>
+
+          <!-- Growth (Featured) -->
+          <div class="col-md-4">
+            <div class="pricing-card featured">
+              <span class="badge bg-primary mb-3">MOST POPULAR</span>
+              <h3>Growth</h3>
+              <div class="price-tag">$149<span class="price-period">/mo</span></div>
+              <ul class="list-unstyled mb-4 text-start">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Everything in Starter</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Global CDN</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Advanced Caching</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Priority Support</li>
+              </ul>
+              <a href="#" class="btn btn-primary w-100 rounded-pill">Start Free Trial</a>
+            </div>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="col-md-4">
+            <div class="pricing-card">
+              <h3>Enterprise</h3>
+              <div class="price-tag">Custom</div>
+              <ul class="list-unstyled mb-4 text-start">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Everything in Growth</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Dedicated Instance</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>24/7 Monitoring & SLA</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Custom Development Hours</li>
+              </ul>
+              <a href="#" class="btn btn-outline-primary w-100 rounded-pill">Contact Sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Container for Editable Content (Optional below) -->
+    <section class="section">
+      <div class="container">
+         ## Container: Home Content
+         #dedit()
+      </div>
+    </section>
+
+    #dotParse("//application/vtl/poweradmin-theme/footer.vtl")
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="${DOT_THEME_PATH}assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="${DOT_THEME_PATH}assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="${DOT_THEME_PATH}assets/js/main.js"></script>
+
+</body>
+</html>
