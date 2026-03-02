@@ -3,7 +3,7 @@
   "id" : "ce7295c8-df36-46c0-9c98-2fb764e9ec1c",
   "name" : "Call To Action",
   "variable" : "CallToAction",
-  "modDate" : "2026-03-02T10:58:42.000+00:00",
+  "modDate" : "2026-03-02T18:12:22.000+00:00",
   "iDate" : "2019-10-07T13:22:18.000+00:00",
   "host" : "SYSTEM_HOST",
   "folder" : "SYSTEM_FOLDER",
@@ -15,7 +15,7 @@
   "fields" : [ {
     "clazz" : "RowField",
     "id" : "0c3c7185d3904e40a71204582d30782b",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:21.000+00:00",
     "name" : "Row Field",
     "fieldType" : "Row",
     "fieldTypeLabel" : "Row",
@@ -25,7 +25,7 @@
   }, {
     "clazz" : "ColumnField",
     "id" : "57ac2ff1e1bc0ad4c9b16f0c2c66822f",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:22.000+00:00",
     "name" : "Column Field",
     "sortOrder" : 1,
     "fieldType" : "Column",
@@ -38,7 +38,7 @@
     "indexed" : true,
     "listed" : true,
     "id" : "1e54aad2-d8ea-4133-835d-e38ead4aed6d",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:22.000+00:00",
     "name" : "Headline",
     "variable" : "headline",
     "required" : true,
@@ -50,7 +50,7 @@
   }, {
     "clazz" : "TextField",
     "id" : "fef9b6ddf9edf3a58557a7c9ed887168",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:22.000+00:00",
     "name" : "Subtext",
     "variable" : "subtext",
     "sortOrder" : 3,
@@ -61,7 +61,7 @@
   }, {
     "clazz" : "TextField",
     "id" : "605c320565d466ebc29f66d07575aa37",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:22.000+00:00",
     "name" : "Button Text",
     "variable" : "buttonText",
     "required" : true,
@@ -73,7 +73,7 @@
   }, {
     "clazz" : "TextField",
     "id" : "6e3caf6dad4fe4e098a3031b179b4aff",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:22.000+00:00",
     "name" : "Button URL",
     "variable" : "buttonUrl",
     "required" : true,

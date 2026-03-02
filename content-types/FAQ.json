@@ -1,0 +1,66 @@
+{
+  "clazz" : "SimpleContentType",
+  "id" : "3d4a8854-7696-40c2-b0f3-28c8ff1121f9",
+  "name" : "FAQ",
+  "variable" : "FAQ",
+  "modDate" : "2026-03-02T18:12:40.000+00:00",
+  "iDate" : "2020-01-07T20:39:48.000+00:00",
+  "host" : "8a7d5e23-da1e-420a-b4f0-471e7da8ea2d",
+  "folder" : "SYSTEM_FOLDER",
+  "siteName" : "default",
+  "folderPath" : "/",
+  "icon" : "help",
+  "baseType" : "CONTENT",
+  "fields" : [ {
+    "clazz" : "RowField",
+    "id" : "d3328ee9-edf4-4377-9349-50f5ab52fa41",
+    "modDate" : "2026-03-02T18:12:39.000+00:00",
+    "name" : "fields-0",
+    "fieldType" : "Row",
+    "fieldTypeLabel" : "Row",
+    "iDate" : "2020-01-07T20:39:48.000+00:00",
+    "variable" : "fields0",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "ColumnField",
+    "id" : "37012401-1424-474d-b134-719b64f8cdf1",
+    "modDate" : "2026-03-02T18:12:39.000+00:00",
+    "name" : "fields-1",
+    "sortOrder" : 1,
+    "fieldType" : "Column",
+    "fieldTypeLabel" : "Column",
+    "iDate" : "2020-01-07T20:39:48.000+00:00",
+    "variable" : "fields1",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "TextField",
+    "searchable" : true,
+    "indexed" : true,
+    "listed" : true,
+    "id" : "52cfaa75-0a3a-4e92-b141-df5eab825979",
+    "modDate" : "2026-03-02T18:12:39.000+00:00",
+    "name" : "Question",
+    "variable" : "question",
+    "sortOrder" : 2,
+    "fieldType" : "Text",
+    "fieldTypeLabel" : "Text",
+    "iDate" : "2020-01-07T20:40:01.000+00:00",
+    "dataType" : "TEXT"
+  }, {
+    "clazz" : "WysiwygField",
+    "id" : "1e203433-ffb1-4e20-b80f-85fe0481c263",
+    "modDate" : "2026-03-02T18:12:40.000+00:00",
+    "name" : "Answer",
+    "variable" : "answer",
+    "sortOrder" : 3,
+    "fieldType" : "WYSIWYG",
+    "fieldTypeLabel" : "WYSIWYG",
+    "iDate" : "2020-01-07T20:40:12.000+00:00",
+    "dataType" : "LONG_TEXT"
+  } ],
+  "workflows" : [ {
+    "id" : "d61a59e1-a49c-46f2-a929-db2b4bfa88b2",
+    "variableName" : "SystemWorkflow"
+  } ],
+  "dotCMSObjectType" : "ContentType"
+}

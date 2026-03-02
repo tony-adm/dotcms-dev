@@ -1,0 +1,128 @@
+{
+  "clazz" : "SimpleContentType",
+  "id" : "fe719cc1-26d1-499f-8702-c6d35c661286",
+  "name" : "Blog Commenter",
+  "variable" : "BlogCommentor",
+  "modDate" : "2026-03-02T18:12:49.000+00:00",
+  "iDate" : "2019-04-12T21:06:08.000+00:00",
+  "host" : "8a7d5e23-da1e-420a-b4f0-471e7da8ea2d",
+  "folder" : "SYSTEM_FOLDER",
+  "siteName" : "default",
+  "folderPath" : "/",
+  "icon" : "face",
+  "baseType" : "CONTENT",
+  "fields" : [ {
+    "clazz" : "RowField",
+    "id" : "fd08b148-98b7-4de5-b6c1-3b184e7b6f71",
+    "modDate" : "2026-03-02T18:12:49.000+00:00",
+    "name" : "fields-0",
+    "fieldType" : "Row",
+    "fieldTypeLabel" : "Row",
+    "iDate" : "2019-04-12T21:06:23.000+00:00",
+    "variable" : "fields0",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "ColumnField",
+    "id" : "dbaabb98-2500-4d06-b820-76d37f4dab54",
+    "modDate" : "2026-03-02T18:12:49.000+00:00",
+    "name" : "fields-1",
+    "sortOrder" : 1,
+    "fieldType" : "Column",
+    "fieldTypeLabel" : "Column",
+    "iDate" : "2019-04-12T21:06:23.000+00:00",
+    "variable" : "fields1",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "HostFolderField",
+    "indexed" : true,
+    "id" : "13667e95-189f-4a8f-889b-c06d2149a24f",
+    "modDate" : "2026-03-02T18:12:49.000+00:00",
+    "name" : "Host",
+    "variable" : "contentHost",
+    "sortOrder" : 2,
+    "fieldType" : "Host-Folder",
+    "fieldTypeLabel" : "Site or Folder",
+    "iDate" : "2020-09-17T14:20:52.000+00:00",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "TextField",
+    "searchable" : true,
+    "indexed" : true,
+    "listed" : true,
+    "id" : "1d8827c5-b10f-4ad6-9bb7-18b705855111",
+    "modDate" : "2026-03-02T18:12:49.000+00:00",
+    "name" : "First Name",
+    "variable" : "firstName",
+    "sortOrder" : 3,
+    "fieldType" : "Text",
+    "fieldTypeLabel" : "Text",
+    "iDate" : "2019-04-12T21:06:23.000+00:00",
+    "dataType" : "TEXT"
+  }, {
+    "clazz" : "TextField",
+    "searchable" : true,
+    "indexed" : true,
+    "listed" : true,
+    "id" : "5c134fd8-5742-4c50-b352-900e141e7df7",
+    "modDate" : "2026-03-02T18:12:49.000+00:00",
+    "name" : "Last Name",
+    "variable" : "lastName",
+    "sortOrder" : 4,
+    "fieldType" : "Text",
+    "fieldTypeLabel" : "Text",
+    "iDate" : "2019-04-12T21:06:36.000+00:00",
+    "dataType" : "TEXT"
+  }, {
+    "clazz" : "CustomField",
+    "searchable" : true,
+    "indexed" : true,
+    "listed" : true,
+    "id" : "bd9c2efa-0854-433c-9c58-bf702ea99b47",
+    "modDate" : "2026-03-02T18:12:49.000+00:00",
+    "name" : "User Id",
+    "variable" : "userId",
+    "sortOrder" : 5,
+    "values" : "##userID.vtl\r\n#dotParse(\"/dA/491b061bb7604249071b0151af782a97\")",
+    "fieldType" : "Custom-Field",
+    "fieldTypeLabel" : "Custom Field",
+    "iDate" : "2019-04-12T21:07:30.000+00:00",
+    "dataType" : "LONG_TEXT"
+  }, {
+    "clazz" : "BinaryField",
+    "id" : "2cfac553-b84a-454d-851a-7c511d53f02e",
+    "modDate" : "2026-03-02T18:12:49.000+00:00",
+    "name" : "Profile Photo",
+    "variable" : "profilePhoto",
+    "sortOrder" : 6,
+    "fieldType" : "Binary",
+    "fieldTypeLabel" : "Binary",
+    "iDate" : "2019-04-12T21:09:56.000+00:00",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "RelationshipField",
+    "searchable" : true,
+    "indexed" : true,
+    "id" : "4da8d5dd-deba-4197-a469-3c44d45b03c0",
+    "modDate" : "2026-03-02T18:12:49.000+00:00",
+    "name" : "Blog Comment",
+    "variable" : "blogComment",
+    "sortOrder" : 7,
+    "fieldType" : "Relationship",
+    "fieldTypeLabel" : "Relationships Field",
+    "iDate" : "2019-04-15T21:45:42.000+00:00",
+    "dataType" : "SYSTEM",
+    "relationships" : {
+      "velocityVar" : "BlogComment",
+      "cardinality" : "ONE_TO_MANY",
+      "isParentField" : null
+    }
+  } ],
+  "metadata" : {
+    "CONTENT_EDITOR2_ENABLED" : false
+  },
+  "workflows" : [ {
+    "id" : "d61a59e1-a49c-46f2-a929-db2b4bfa88b2",
+    "variableName" : "SystemWorkflow"
+  } ],
+  "dotCMSObjectType" : "ContentType"
+}

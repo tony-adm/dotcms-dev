@@ -1,0 +1,129 @@
+{
+  "clazz" : "SimpleContentType",
+  "id" : "045d0b52-fa68-465a-b820-f9fc22febc50",
+  "name" : "Blog Author",
+  "variable" : "BlogAuthor",
+  "modDate" : "2026-03-02T18:12:41.000+00:00",
+  "iDate" : "2019-04-12T16:26:25.000+00:00",
+  "host" : "SYSTEM_HOST",
+  "folder" : "SYSTEM_FOLDER",
+  "siteName" : "systemHost",
+  "folderPath" : "/",
+  "icon" : "person",
+  "baseType" : "CONTENT",
+  "fields" : [ {
+    "clazz" : "RowField",
+    "id" : "e3d1c2ef-207f-4e9a-af5d-b92991b661f4",
+    "modDate" : "2026-03-02T18:12:40.000+00:00",
+    "name" : "fields-0",
+    "fieldType" : "Row",
+    "fieldTypeLabel" : "Row",
+    "iDate" : "2019-04-12T16:26:37.000+00:00",
+    "variable" : "fields0",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "ColumnField",
+    "id" : "fbebe544-c957-4537-8b20-298a3eadf059",
+    "modDate" : "2026-03-02T18:12:40.000+00:00",
+    "name" : "fields-1",
+    "sortOrder" : 1,
+    "fieldType" : "Column",
+    "fieldTypeLabel" : "Column",
+    "iDate" : "2019-04-12T16:26:37.000+00:00",
+    "variable" : "fields1",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "HostFolderField",
+    "searchable" : true,
+    "indexed" : true,
+    "id" : "8a8858cf-d29e-4042-b1ed-16cd53fffbe7",
+    "modDate" : "2026-03-02T18:12:40.000+00:00",
+    "name" : "Host",
+    "variable" : "contentHost",
+    "sortOrder" : 2,
+    "fieldType" : "Host-Folder",
+    "fieldTypeLabel" : "Site or Folder",
+    "iDate" : "2020-09-17T14:19:41.000+00:00",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "TextField",
+    "searchable" : true,
+    "indexed" : true,
+    "listed" : true,
+    "id" : "d9d6aa3e-3fbd-4bfe-b494-8ac34dda7dac",
+    "modDate" : "2026-03-02T18:12:40.000+00:00",
+    "name" : "First Name",
+    "variable" : "firstName",
+    "sortOrder" : 3,
+    "fieldType" : "Text",
+    "fieldTypeLabel" : "Text",
+    "iDate" : "2019-04-12T16:26:37.000+00:00",
+    "dataType" : "TEXT"
+  }, {
+    "clazz" : "TextField",
+    "searchable" : true,
+    "indexed" : true,
+    "listed" : true,
+    "id" : "ff349c1a-9ad0-49d6-b0f2-392bba3b7659",
+    "modDate" : "2026-03-02T18:12:41.000+00:00",
+    "name" : "Last Name",
+    "variable" : "lastName",
+    "sortOrder" : 4,
+    "fieldType" : "Text",
+    "fieldTypeLabel" : "Text",
+    "iDate" : "2019-04-12T16:26:48.000+00:00",
+    "dataType" : "TEXT"
+  }, {
+    "clazz" : "CustomField",
+    "searchable" : true,
+    "indexed" : true,
+    "listed" : true,
+    "id" : "74fb9fe2-5eea-49b4-a81b-fe35889f1b7a",
+    "modDate" : "2026-03-02T18:12:41.000+00:00",
+    "name" : "User ID",
+    "variable" : "userId",
+    "sortOrder" : 5,
+    "values" : "#dotParse(\"/application/vtl/custom-fields/userID.vtl\")",
+    "fieldType" : "Custom-Field",
+    "fieldTypeLabel" : "Custom Field",
+    "iDate" : "2019-04-12T16:27:29.000+00:00",
+    "dataType" : "LONG_TEXT"
+  }, {
+    "clazz" : "BinaryField",
+    "id" : "3dbce833-dde3-4467-852b-b8a53c52f04e",
+    "modDate" : "2026-03-02T18:12:41.000+00:00",
+    "name" : "Profile Photo",
+    "variable" : "profilePhoto",
+    "sortOrder" : 6,
+    "fieldType" : "Binary",
+    "fieldTypeLabel" : "Binary",
+    "iDate" : "2019-04-12T16:27:01.000+00:00",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "RelationshipField",
+    "searchable" : true,
+    "indexed" : true,
+    "id" : "35174ea7-d2fd-4413-a9e0-a8652f80e5d4",
+    "modDate" : "2026-03-02T18:12:41.000+00:00",
+    "name" : "Blog",
+    "variable" : "blog",
+    "sortOrder" : 7,
+    "fieldType" : "Relationship",
+    "fieldTypeLabel" : "Relationships Field",
+    "iDate" : "2019-04-18T15:50:18.000+00:00",
+    "dataType" : "SYSTEM",
+    "relationships" : {
+      "velocityVar" : "Blog",
+      "cardinality" : "MANY_TO_MANY",
+      "isParentField" : null
+    }
+  } ],
+  "metadata" : {
+    "CONTENT_EDITOR2_ENABLED" : false
+  },
+  "workflows" : [ {
+    "id" : "d61a59e1-a49c-46f2-a929-db2b4bfa88b2",
+    "variableName" : "SystemWorkflow"
+  } ],
+  "dotCMSObjectType" : "ContentType"
+}

@@ -1,0 +1,89 @@
+{
+  "clazz" : "SimpleContentType",
+  "id" : "ce930143870e11569f93f8a9fff5da19",
+  "name" : "Dot Favorite Page",
+  "variable" : "dotFavoritePage",
+  "modDate" : "2026-03-02T18:12:44.000+00:00",
+  "iDate" : "2023-01-11T15:42:12.000+00:00",
+  "host" : "SYSTEM_HOST",
+  "folder" : "SYSTEM_FOLDER",
+  "siteName" : "systemHost",
+  "folderPath" : "/",
+  "icon" : "event_note",
+  "baseType" : "CONTENT",
+  "system" : true,
+  "fields" : [ {
+    "clazz" : "RowField",
+    "id" : "5b5bd2178dbf0e54d993ab5dc1953eda",
+    "modDate" : "2026-03-02T18:12:44.000+00:00",
+    "name" : "Row Field",
+    "fieldType" : "Row",
+    "fieldTypeLabel" : "Row",
+    "iDate" : "2026-03-02T18:00:56.000+00:00",
+    "variable" : "rowField",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "ColumnField",
+    "id" : "b81d36e82974ee5f5a86df24af0b957f",
+    "modDate" : "2026-03-02T18:10:20.000+00:00",
+    "name" : "Column Field",
+    "sortOrder" : 1,
+    "fieldType" : "Column",
+    "fieldTypeLabel" : "Column",
+    "iDate" : "2026-02-25T16:18:43.000+00:00",
+    "variable" : "columnField",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "BinaryField",
+    "id" : "fd98a0871c994d0ff1a8407a391487da",
+    "modDate" : "2026-03-02T18:10:20.000+00:00",
+    "name" : "Screenshot",
+    "variable" : "screenshot",
+    "sortOrder" : 2,
+    "fieldType" : "Binary",
+    "fieldTypeLabel" : "Binary",
+    "iDate" : "2023-05-09T20:52:28.000+00:00",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "TextField",
+    "id" : "d0c2a52795fd310b21b4778d3e9b17e5",
+    "modDate" : "2026-03-02T18:10:20.000+00:00",
+    "name" : "title",
+    "variable" : "title",
+    "sortOrder" : 3,
+    "fieldType" : "Text",
+    "fieldTypeLabel" : "Text",
+    "iDate" : "2023-05-09T20:52:28.000+00:00",
+    "dataType" : "TEXT"
+  }, {
+    "clazz" : "TextField",
+    "indexed" : true,
+    "id" : "17c8f531d34e93b0b84f094f5c6643b6",
+    "modDate" : "2026-03-02T18:10:20.000+00:00",
+    "name" : "url",
+    "variable" : "url",
+    "required" : true,
+    "sortOrder" : 4,
+    "fieldType" : "Text",
+    "fieldTypeLabel" : "Text",
+    "iDate" : "2023-05-09T20:52:28.000+00:00",
+    "dataType" : "TEXT"
+  }, {
+    "clazz" : "TextField",
+    "indexed" : true,
+    "id" : "0a9d0982c02b4ad1b18c0e2536cb037e",
+    "modDate" : "2026-03-02T18:10:20.000+00:00",
+    "name" : "order",
+    "variable" : "order",
+    "sortOrder" : 5,
+    "fieldType" : "Text",
+    "fieldTypeLabel" : "Text",
+    "iDate" : "2023-05-09T20:52:28.000+00:00",
+    "dataType" : "INTEGER"
+  } ],
+  "workflows" : [ {
+    "id" : "d61a59e1-a49c-46f2-a929-db2b4bfa88b2",
+    "variableName" : "SystemWorkflow"
+  } ],
+  "dotCMSObjectType" : "ContentType"
+}

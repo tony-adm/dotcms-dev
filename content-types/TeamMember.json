@@ -3,7 +3,7 @@
   "id" : "a9008e164862058349e61e7685083d8f",
   "name" : "Team Member",
   "variable" : "TeamMember",
-  "modDate" : "2026-03-02T10:58:40.000+00:00",
+  "modDate" : "2026-03-02T18:12:19.000+00:00",
   "iDate" : "2026-03-02T10:58:40.000+00:00",
   "host" : "SYSTEM_HOST",
   "folder" : "SYSTEM_FOLDER",
@@ -15,7 +15,7 @@
   "fields" : [ {
     "clazz" : "RowField",
     "id" : "7a286e1292d28e4542cae2c844767335",
-    "modDate" : "2026-03-02T10:58:40.000+00:00",
+    "modDate" : "2026-03-02T18:12:18.000+00:00",
     "name" : "Row Field",
     "fieldType" : "Row",
     "fieldTypeLabel" : "Row",
@@ -25,7 +25,7 @@
   }, {
     "clazz" : "ColumnField",
     "id" : "8b5d21eb792489f14bc1afb5b5168e50",
-    "modDate" : "2026-03-02T10:58:41.000+00:00",
+    "modDate" : "2026-03-02T18:12:18.000+00:00",
     "name" : "Column Field",
     "sortOrder" : 1,
     "fieldType" : "Column",
@@ -38,7 +38,7 @@
     "indexed" : true,
     "listed" : true,
     "id" : "939b8f3811d4a82556b84d2287814a09",
-    "modDate" : "2026-03-02T10:58:41.000+00:00",
+    "modDate" : "2026-03-02T18:12:18.000+00:00",
     "name" : "Full Name",
     "variable" : "fullName",
     "required" : true,
@@ -50,7 +50,7 @@
   }, {
     "clazz" : "TextField",
     "id" : "dbacf118046f1657650a86592f6587cd",
-    "modDate" : "2026-03-02T10:58:41.000+00:00",
+    "modDate" : "2026-03-02T18:12:19.000+00:00",
     "name" : "Job Title",
     "variable" : "role",
     "required" : true,
@@ -62,7 +62,7 @@
   }, {
     "clazz" : "BinaryField",
     "id" : "a89fc02b95bded124fdd2885c1959c9c",
-    "modDate" : "2026-03-02T10:58:41.000+00:00",
+    "modDate" : "2026-03-02T18:12:19.000+00:00",
     "name" : "Photo",
     "variable" : "photo",
     "required" : true,
@@ -74,7 +74,7 @@
   }, {
     "clazz" : "TextAreaField",
     "id" : "7d8f222190815b9b34d73333783ca332",
-    "modDate" : "2026-03-02T10:58:41.000+00:00",
+    "modDate" : "2026-03-02T18:12:19.000+00:00",
     "name" : "Short Bio",
     "variable" : "bio",
     "sortOrder" : 5,
@@ -85,7 +85,7 @@
   }, {
     "clazz" : "TextField",
     "id" : "10fc398546e2771ddb1b7d563fc9d44b",
-    "modDate" : "2026-03-02T10:58:41.000+00:00",
+    "modDate" : "2026-03-02T18:12:19.000+00:00",
     "name" : "Twitter URL",
     "variable" : "socialTwitter",
     "sortOrder" : 6,
@@ -96,7 +96,7 @@
   }, {
     "clazz" : "TextField",
     "id" : "df6ab7545b8ec2957fccc34ed4c1ddff",
-    "modDate" : "2026-03-02T10:58:41.000+00:00",
+    "modDate" : "2026-03-02T18:12:19.000+00:00",
     "name" : "LinkedIn URL",
     "variable" : "socialLinkedin",
     "sortOrder" : 7,

@@ -3,7 +3,7 @@
   "id" : "1ec31606929a9735048bfe18d037c0c1",
   "name" : "Feature Item",
   "variable" : "FeatureItem",
-  "modDate" : "2026-03-02T10:58:42.000+00:00",
+  "modDate" : "2026-03-02T18:12:18.000+00:00",
   "iDate" : "2026-03-02T10:58:42.000+00:00",
   "host" : "SYSTEM_HOST",
   "folder" : "SYSTEM_FOLDER",
@@ -15,7 +15,7 @@
   "fields" : [ {
     "clazz" : "RowField",
     "id" : "342cf92e766be5405c43bc92f9bde5ea",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:17.000+00:00",
     "name" : "Row Field",
     "fieldType" : "Row",
     "fieldTypeLabel" : "Row",
@@ -25,7 +25,7 @@
   }, {
     "clazz" : "ColumnField",
     "id" : "3c646a34cd93aa1db0bc6714386355d0",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:17.000+00:00",
     "name" : "Column Field",
     "sortOrder" : 1,
     "fieldType" : "Column",
@@ -38,7 +38,7 @@
     "indexed" : true,
     "listed" : true,
     "id" : "990873c14d14cdb7ccc12137d9626d67",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:17.000+00:00",
     "name" : "Title",
     "variable" : "title",
     "required" : true,
@@ -50,7 +50,7 @@
   }, {
     "clazz" : "TextField",
     "id" : "dbd7da765534dc85e805c8715e60fe41",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:17.000+00:00",
     "name" : "Icon Class",
     "variable" : "iconClass",
     "required" : true,
@@ -62,7 +62,7 @@
   }, {
     "clazz" : "WysiwygField",
     "id" : "9b6ec6882e2bdd7b954bc226499f635e",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:17.000+00:00",
     "name" : "Description",
     "variable" : "description",
     "required" : true,
@@ -74,7 +74,7 @@
   }, {
     "clazz" : "TextField",
     "id" : "fd5d92864366bc9f2d38d5584eb8f3f4",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:17.000+00:00",
     "name" : "Link URL",
     "variable" : "linkUrl",
     "sortOrder" : 5,

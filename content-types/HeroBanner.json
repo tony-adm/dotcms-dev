@@ -3,7 +3,7 @@
   "id" : "b5ad8dd78f39e0d034d8e03a29eecd8e",
   "name" : "Hero Banner",
   "variable" : "HeroBanner",
-  "modDate" : "2026-03-02T10:58:42.000+00:00",
+  "modDate" : "2026-03-02T18:12:16.000+00:00",
   "iDate" : "2026-03-02T10:58:41.000+00:00",
   "host" : "SYSTEM_HOST",
   "folder" : "SYSTEM_FOLDER",
@@ -15,7 +15,7 @@
   "fields" : [ {
     "clazz" : "RowField",
     "id" : "4559c4f4752e7b247acbd0c96d8f3917",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:16.000+00:00",
     "name" : "Row Field",
     "fieldType" : "Row",
     "fieldTypeLabel" : "Row",
@@ -25,7 +25,7 @@
   }, {
     "clazz" : "ColumnField",
     "id" : "7fde67d00d85840ed4734ee320f9c836",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:16.000+00:00",
     "name" : "Column Field",
     "sortOrder" : 1,
     "fieldType" : "Column",
@@ -38,7 +38,7 @@
     "indexed" : true,
     "listed" : true,
     "id" : "f53df388c270152e8ea21f298d124b9b",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:16.000+00:00",
     "name" : "Title",
     "variable" : "title",
     "required" : true,
@@ -50,7 +50,7 @@
   }, {
     "clazz" : "TextField",
     "id" : "1148cf5fa2d380be8ba01c64bbb249e9",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:16.000+00:00",
     "name" : "Subtitle",
     "variable" : "subtitle",
     "sortOrder" : 3,
@@ -61,7 +61,7 @@
   }, {
     "clazz" : "BinaryField",
     "id" : "3f7c335eb8bfbdd930f02c52b67b2e2f",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:16.000+00:00",
     "name" : "Background Image",
     "variable" : "image",
     "required" : true,
@@ -73,7 +73,7 @@
   }, {
     "clazz" : "TextField",
     "id" : "f18ecb131f722b3a68365389fadbadb5",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:16.000+00:00",
     "name" : "Button Text",
     "variable" : "buttonText",
     "sortOrder" : 5,
@@ -84,7 +84,7 @@
   }, {
     "clazz" : "TextField",
     "id" : "cb61da41d590b14b4e57682c5687fd1a",
-    "modDate" : "2026-03-02T10:58:42.000+00:00",
+    "modDate" : "2026-03-02T18:12:16.000+00:00",
     "name" : "Button URL",
     "variable" : "buttonUrl",
     "sortOrder" : 6,

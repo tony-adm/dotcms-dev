@@ -1,0 +1,141 @@
+{
+  "clazz" : "DotAssetContentType",
+  "id" : "4061db324fdce3993a494c856e76ab1e",
+  "name" : "Images",
+  "variable" : "Images",
+  "modDate" : "2026-03-02T18:12:50.000+00:00",
+  "iDate" : "2024-05-30T14:37:07.000+00:00",
+  "host" : "SYSTEM_HOST",
+  "folder" : "SYSTEM_FOLDER",
+  "siteName" : "systemHost",
+  "folderPath" : "/",
+  "icon" : "image",
+  "description" : "Photos and images",
+  "baseType" : "DOTASSET",
+  "fields" : [ {
+    "clazz" : "RowField",
+    "id" : "2b51a2477987c21e2052c38bed1934a4",
+    "modDate" : "2026-03-02T18:12:50.000+00:00",
+    "name" : "fields-0",
+    "fieldType" : "Row",
+    "fieldTypeLabel" : "Row",
+    "iDate" : "2024-05-30T14:37:08.000+00:00",
+    "variable" : "fields0",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "ColumnField",
+    "id" : "86e5c0c719247428327b50e0f296a3a9",
+    "modDate" : "2026-03-02T18:12:50.000+00:00",
+    "name" : "fields-1",
+    "sortOrder" : 1,
+    "fieldType" : "Column",
+    "fieldTypeLabel" : "Column",
+    "iDate" : "2024-05-30T14:37:08.000+00:00",
+    "variable" : "fields1",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "HostFolderField",
+    "searchable" : true,
+    "indexed" : true,
+    "id" : "768b333b84bc76fe81acac2da97287dc",
+    "modDate" : "2026-03-02T18:12:50.000+00:00",
+    "name" : "Site or Folder",
+    "variable" : "hostFolder",
+    "sortOrder" : 2,
+    "fieldType" : "Host-Folder",
+    "fieldTypeLabel" : "Site or Folder",
+    "iDate" : "2024-05-30T14:37:07.000+00:00",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "BinaryField",
+    "searchable" : true,
+    "indexed" : true,
+    "listed" : true,
+    "id" : "2142f2e6855ab113c7329256a7abf785",
+    "modDate" : "2026-03-02T18:12:50.000+00:00",
+    "name" : "Asset",
+    "variable" : "asset",
+    "required" : true,
+    "sortOrder" : 3,
+    "fixed" : true,
+    "fieldType" : "Binary",
+    "fieldTypeLabel" : "Binary",
+    "fieldVariables" : [ {
+      "clazz" : "com.dotcms.contenttype.model.field.ImmutableFieldVariable",
+      "id" : "ffd57821-4ed8-491d-bd88-acf3b40852d1",
+      "fieldId" : "2142f2e6855ab113c7329256a7abf785",
+      "name" : null,
+      "key" : "accept",
+      "value" : "image/*",
+      "userId" : null,
+      "modDate" : null
+    }, {
+      "clazz" : "com.dotcms.contenttype.model.field.ImmutableFieldVariable",
+      "id" : "50f9ffc0-66ef-4ebc-9152-cc6fb999d587",
+      "fieldId" : "2142f2e6855ab113c7329256a7abf785",
+      "name" : null,
+      "key" : "systemOptions",
+      "value" : "{\"allowURLImport\":true,\"allowCodeWrite\":false}",
+      "userId" : null,
+      "modDate" : null
+    } ],
+    "iDate" : "2024-05-30T14:37:07.000+00:00",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "TextField",
+    "id" : "3c600badffab8c9b14269bde6a7a8e18",
+    "modDate" : "2026-03-02T18:12:50.000+00:00",
+    "name" : "Description",
+    "variable" : "description",
+    "sortOrder" : 4,
+    "hint" : "Used in the Alt tag",
+    "fieldType" : "Text",
+    "fieldTypeLabel" : "Text",
+    "fieldVariables" : [ {
+      "clazz" : "com.dotcms.contenttype.model.field.ImmutableFieldVariable",
+      "id" : "a0c9ae94-8af7-4fa5-b3f2-8836c43684a6",
+      "fieldId" : "3c600badffab8c9b14269bde6a7a8e18",
+      "name" : null,
+      "key" : "dotAIDescriptionSrc",
+      "value" : "asset",
+      "userId" : null,
+      "modDate" : null
+    } ],
+    "iDate" : "2024-05-30T14:41:25.000+00:00",
+    "dataType" : "TEXT"
+  }, {
+    "clazz" : "TagField",
+    "searchable" : true,
+    "indexed" : true,
+    "id" : "ceb1a19dd15cdc5a60a6aa0a6c9c0b8a",
+    "modDate" : "2026-03-02T18:12:50.000+00:00",
+    "name" : "Tags",
+    "variable" : "tags",
+    "sortOrder" : 5,
+    "fieldType" : "Tag",
+    "fieldTypeLabel" : "Tag",
+    "fieldVariables" : [ {
+      "clazz" : "com.dotcms.contenttype.model.field.ImmutableFieldVariable",
+      "id" : "c6e8a9c7-a3c8-4389-bb69-29d483cae12f",
+      "fieldId" : "ceb1a19dd15cdc5a60a6aa0a6c9c0b8a",
+      "name" : null,
+      "key" : "dotAITagSrc",
+      "value" : "asset",
+      "userId" : null,
+      "modDate" : null
+    } ],
+    "iDate" : "2024-05-30T14:37:07.000+00:00",
+    "dataType" : "SYSTEM"
+  } ],
+  "metadata" : {
+    "CONTENT_EDITOR2_ENABLED" : false
+  },
+  "workflows" : [ {
+    "id" : "d61a59e1-a49c-46f2-a929-db2b4bfa88b2",
+    "variableName" : "SystemWorkflow"
+  } ],
+  "systemActionMappings" : {
+    "NEW" : "ceca71a0-deee-4999-bd47-b01baa1bcfc8"
+  },
+  "dotCMSObjectType" : "ContentType"
+}

@@ -1,0 +1,79 @@
+{
+  "clazz" : "SimpleContentType",
+  "id" : "3b715ddbb8c2c826e40603981c6e004b",
+  "name" : "Page Form",
+  "variable" : "PageForm",
+  "modDate" : "2026-03-02T18:12:52.000+00:00",
+  "iDate" : "2025-05-15T03:12:47.000+00:00",
+  "host" : "8a7d5e23-da1e-420a-b4f0-471e7da8ea2d",
+  "folder" : "SYSTEM_FOLDER",
+  "siteName" : "default",
+  "folderPath" : "/",
+  "icon" : "contact_page",
+  "baseType" : "CONTENT",
+  "fields" : [ {
+    "clazz" : "RowField",
+    "id" : "49ba9ef531c7dedaffb2e5a98afd085b",
+    "modDate" : "2026-03-02T18:12:52.000+00:00",
+    "name" : "fields-0",
+    "fieldType" : "Row",
+    "fieldTypeLabel" : "Row",
+    "iDate" : "2025-05-15T03:12:47.000+00:00",
+    "variable" : "fields0",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "ColumnField",
+    "id" : "93d26c740a6d4fe5ce1a3f9aabd2e20d",
+    "modDate" : "2026-03-02T18:12:52.000+00:00",
+    "name" : "fields-1",
+    "sortOrder" : 1,
+    "fieldType" : "Column",
+    "fieldTypeLabel" : "Column",
+    "iDate" : "2025-05-15T03:12:47.000+00:00",
+    "variable" : "fields1",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "TextField",
+    "id" : "78ebbc5580bc4e1b05bc93a9728aa8a8",
+    "modDate" : "2026-03-02T18:12:52.000+00:00",
+    "name" : "title",
+    "variable" : "title",
+    "sortOrder" : 2,
+    "fieldType" : "Text",
+    "fieldTypeLabel" : "Text",
+    "iDate" : "2025-05-15T03:12:55.000+00:00",
+    "dataType" : "TEXT"
+  }, {
+    "clazz" : "TextAreaField",
+    "id" : "d3d70aa450aab28865928b48be0101d5",
+    "modDate" : "2026-03-02T18:12:52.000+00:00",
+    "name" : "description",
+    "variable" : "description",
+    "sortOrder" : 3,
+    "fieldType" : "Textarea",
+    "fieldTypeLabel" : "Textarea",
+    "iDate" : "2025-05-15T03:13:15.000+00:00",
+    "dataType" : "LONG_TEXT"
+  }, {
+    "clazz" : "SelectField",
+    "id" : "d92f163d3f9688a0fa41807d1b80666a",
+    "modDate" : "2026-03-02T18:12:52.000+00:00",
+    "name" : "Form Type",
+    "variable" : "formType",
+    "sortOrder" : 4,
+    "values" : "Contact Us|contact-us\r\nProduct Request|product-request",
+    "defaultValue" : "contact-us",
+    "fieldType" : "Select",
+    "fieldTypeLabel" : "Select",
+    "iDate" : "2025-05-15T03:13:52.000+00:00",
+    "dataType" : "TEXT"
+  } ],
+  "metadata" : {
+    "CONTENT_EDITOR2_ENABLED" : false
+  },
+  "workflows" : [ {
+    "id" : "d61a59e1-a49c-46f2-a929-db2b4bfa88b2",
+    "variableName" : "SystemWorkflow"
+  } ],
+  "dotCMSObjectType" : "ContentType"
+}
