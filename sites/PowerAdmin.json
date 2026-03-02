@@ -1,5 +1,5 @@
 {
-  "inode" : "f792e02d-722f-47de-8213-c11ef9ddd2cc",
+  "inode" : "160b8377-6f17-4de2-aade-9294f9885975",
   "identifier" : "163ec775516febf9d630e4c6fcda4a16",
   "aliases" : null,
   "systemHost" : false,
@@ -16,12 +16,12 @@
   "embeddedDashboard" : null,
   "languageId" : 1,
   "variables" : [ ],
-  "modDate" : "2026-03-02T11:05:22.227+00:00",
+  "modDate" : "2026-03-02T18:03:17.253+00:00",
   "modUser" : "dotcms.org.1",
   "dotCMSObjectType" : "Site",
   "archived" : false,
   "working" : true,
   "live" : false,
   "default" : false,
-  "locked" : false
+  "locked" : true
 }
