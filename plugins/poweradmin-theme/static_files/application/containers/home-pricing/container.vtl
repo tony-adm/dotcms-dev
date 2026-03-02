@@ -1,0 +1,16 @@
+<div class="col-md-4">
+  <div class="pricing-card #if($Content.isFeatured == 'true') featured #end">
+    #if($Content.isFeatured == 'true')
+    <span class="badge bg-primary mb-3">MOST POPULAR</span>
+    #end
+    <h3>$!{Content.title}</h3>
+    <div class="price-tag">$!{Content.price}<span class="price-period">/$!{Content.period}</span></div>
+    <ul class="list-unstyled mb-4 text-start">
+       ## Assuming features are stored as a newline-separated list or JSON array
+       #foreach($feature in $Content.features.split("\n"))
+       <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>$feature</li>
+       #end
+    </ul>
+    <a href="$!{Content.ctaLink}" class="btn #if($Content.isFeatured == 'true') btn-primary #else btn-outline-primary #end w-100 rounded-pill">$!{Content.ctaText}</a>
+  </div>
+</div>

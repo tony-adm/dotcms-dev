@@ -108,48 +108,27 @@
   <!-- Main Content -->
   <main class="main" style="margin-left: 0; margin-top: 60px;"> <!-- Override sidebar margin for full width -->
     
-    <!-- Hero Section -->
+    <!-- Hero Section Container -->
     <section class="hero-section">
       <div class="container">
-        <h1 class="hero-title">Enterprise-Grade Web Performance.<br>Zero Headaches.</h1>
-        <p class="hero-subtitle">Stop wrestling with WordPress plugins. Get secure, scalable, and lightning-fast dotCMS hosting managed by experts.</p>
-        <div class="d-flex justify-content-center gap-3">
-          <a href="#pricing" class="btn btn-primary cta-button">Start Your Project</a>
-          <a href="#features" class="btn btn-outline-secondary cta-button">Learn More</a>
-        </div>
+        ## Container: Home Hero
+        ## This container should accept a "Hero Banner" content type
+        #dcontainer({"id":"HomeHero", "maxContent": 1})
       </div>
     </section>
 
-    <!-- Value Props -->
+    <!-- Features Section Container -->
     <section id="features" class="section py-5">
       <div class="container">
         <div class="row g-4">
-          <div class="col-md-4">
-            <div class="value-prop-card">
-              <div class="icon-box"><i class="bi bi-lightning-charge"></i></div>
-              <h3>Blazing Fast Speed</h3>
-              <p>Your site loads in milliseconds, not seconds. Optimized specifically for dotCMS with advanced caching and CDN integration. Google (and your users) will love it.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="value-prop-card">
-              <div class="icon-box"><i class="bi bi-shield-check"></i></div>
-              <h3>Bank-Level Security</h3>
-              <p>Forget about "plugin vulnerabilities." We provide enterprise-grade security monitoring, daily backups, and SSL certificates out of the box.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="value-prop-card">
-              <div class="icon-box"><i class="bi bi-graph-up-arrow"></i></div>
-              <h3>Infinite Scalability</h3>
-              <p>From 100 to 1 million visitors. Whether you are a startup or an enterprise, our infrastructure grows with you automatically.</p>
-            </div>
-          </div>
+           ## Container: Home Features
+           ## This container should accept "Feature Card" content types
+           #dcontainer({"id":"HomeFeatures", "maxContent": 3})
         </div>
       </div>
     </section>
 
-    <!-- Pricing Section -->
+    <!-- Pricing Section Container -->
     <section id="pricing" class="section py-5 bg-light">
       <div class="container">
         <div class="section-header text-center mb-5">
@@ -157,60 +136,19 @@
           <p>Choose the plan that fits your growth.</p>
         </div>
         <div class="row g-4 align-items-center">
-          <!-- Starter -->
-          <div class="col-md-4">
-            <div class="pricing-card">
-              <h3>Starter</h3>
-              <div class="price-tag">$49<span class="price-period">/mo</span></div>
-              <ul class="list-unstyled mb-4 text-start">
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Managed Updates</li>
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Daily Backups</li>
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Free SSL Certificate</li>
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Email Support</li>
-              </ul>
-              <a href="#" class="btn btn-outline-primary w-100 rounded-pill">Get Started</a>
-            </div>
-          </div>
-
-          <!-- Growth (Featured) -->
-          <div class="col-md-4">
-            <div class="pricing-card featured">
-              <span class="badge bg-primary mb-3">MOST POPULAR</span>
-              <h3>Growth</h3>
-              <div class="price-tag">$149<span class="price-period">/mo</span></div>
-              <ul class="list-unstyled mb-4 text-start">
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Everything in Starter</li>
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Global CDN</li>
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Advanced Caching</li>
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Priority Support</li>
-              </ul>
-              <a href="#" class="btn btn-primary w-100 rounded-pill">Start Free Trial</a>
-            </div>
-          </div>
-
-          <!-- Enterprise -->
-          <div class="col-md-4">
-            <div class="pricing-card">
-              <h3>Enterprise</h3>
-              <div class="price-tag">Custom</div>
-              <ul class="list-unstyled mb-4 text-start">
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Everything in Growth</li>
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Dedicated Instance</li>
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>24/7 Monitoring & SLA</li>
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Custom Development Hours</li>
-              </ul>
-              <a href="#" class="btn btn-outline-primary w-100 rounded-pill">Contact Sales</a>
-            </div>
-          </div>
+           ## Container: Home Pricing
+           ## This container should accept "Pricing Plan" content types
+           #dcontainer({"id":"HomePricing", "maxContent": 3})
         </div>
       </div>
     </section>
 
-    <!-- Main Container for Editable Content (Optional below) -->
+    <!-- General Body Content Container -->
     <section class="section">
       <div class="container">
-         ## Container: Home Content
-         #dedit()
+         ## Container: Home Body
+         ## This container can accept "Rich Text" or "Generic Content"
+         #dcontainer({"id":"HomeBody"})
       </div>
     </section>
 
