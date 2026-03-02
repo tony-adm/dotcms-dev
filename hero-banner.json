@@ -1,0 +1,13 @@
+{
+  "contentType": "HeroBanner",
+  "name": "Hero Banner",
+  "description": "Homepage Hero Banner component with background image and CTA",
+  "host": "SYSTEM_HOST",
+  "fields": [
+    {"dataType": "text", "fieldName": "title", "name": "Title", "required": true, "indexed": true, "listed": true},
+    {"dataType": "text", "fieldName": "subtitle", "name": "Subtitle", "required": false},
+    {"dataType": "binary", "fieldName": "image", "name": "Background Image", "required": true},
+    {"dataType": "text", "fieldName": "buttonText", "name": "Button Text", "required": false},
+    {"dataType": "text", "fieldName": "buttonUrl", "name": "Button URL", "required": false}
+  ]
+}
