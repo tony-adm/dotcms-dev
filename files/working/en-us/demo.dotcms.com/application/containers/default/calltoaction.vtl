@@ -1,0 +1,18 @@
+<!-- Container Code: /application/containers/calltoaction.vtl -->
+
+<h1>$!{dotContentMap.headline}</h1>
+$!{dotContentMap.subHeading}
+<div class="btn-group">
+    #if($UtilMethods.isSet($dotContentMap.buttonText1) && $UtilMethods.isSet($dotContentMap.buttonUrl1))
+        <a class="btn btn-primary" href="$dotContentMap.buttonUrl1">$dotContentMap.buttonText1</a>
+    #end
+
+    #if($UtilMethods.isSet($dotContentMap.buttonText2) && $UtilMethods.isSet($dotContentMap.buttonUrl2))
+        #if($targetLink2 == "iframe")
+            #set($target = "data-lightbox='iframe'")
+        #elseif($targetLink2 == "new")
+            #set($target = "target='_blank'")
+        #end
+        <a class="btn btn-flat" href="$buttonUrl2" $!{target}>$dotContentMap.buttonText2</a>
+    #end
+</div>

@@ -1,0 +1,11 @@
+#set ($content = $item.attrs.data)
+<div class="blog-contentlet">
+    <img class="blog-contentlet__image" alt="$!content.altTag" src="/dA/$!content.identifier/370w/20q/$!{content.image.name}">
+	<div class="blog-contentlet__desc">
+        <h3><a href="/activities/$content.urlTitle">$content.title</a></h3>
+        $!{content.description}
+    </div>
+    <div class="blog-contentlet__action">
+        <a class="button button-primary" href="/activities/$content.urlTitle">Learn More</a>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+#set ($content = $item.attrs.data)
+<div class="blog-contentlet">
+    <img class="blog-contentlet__image" alt="$!content.title" src="/dA/$!content.identifier/370w/20q/$!{content.image.name}">
+    <div class="blog-contentlet__desc">
+        <h3>$!content.title</h3>
+        <span>$!content.description</span>
+    </div>
+    <div class="blog-contentlet__action">
+        #set ($salePrice = $!content.salePrice)	           
+        #if ($salePrice)
+            <div class="blog-contentlet__price">
+                <span class="current-price sale-price">$!content.salePrice</span>
+                <span class="original-price">$!content.retailPrice</span>
+            </div>
+        #else
+            <span class="current-price sale-price">$!content.retailPrice</span>
+        #end
+		<a class="button button-primary" href="/store/products/$!{$content.salePrice}">Buy</a>
+    </div>
+</div>

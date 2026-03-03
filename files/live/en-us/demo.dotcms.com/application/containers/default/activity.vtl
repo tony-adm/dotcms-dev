@@ -1,0 +1,17 @@
+<!-- Container Code: /application/containers/activity.vtl -->
+
+<a class="box-info" href="/activities/$urlTitle">
+	<img class="box-info-img" src="/dA/${dotContentMap.identifier}/image/320maxh/270ch/270cw/80q/13ro/$dotContentMap.image.name" alt="$dotContentMap.title" width="270" height="270">
+	<div class="box-info-body">
+		<h4 class="box-info-title">$!{dotContentMap.title}</h4>
+		<p
+		    class="box-info-text"
+            #if ($EDIT_MODE)
+                data-language="${CONTENT_LANGUAGE}"
+                data-mode="minimal"
+                data-inode="${ContentInode}"
+                data-field-name="description"      
+            #end
+	    >$UtilMethods.prettyShortenString("$dotContentMap.description", 120)</p>
+	</div>
+</a>

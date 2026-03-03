@@ -1,0 +1,192 @@
+{
+  "clazz" : "SimpleContentType",
+  "id" : "778f3246-9b11-4a2a-a101-e7fdf111bdad",
+  "name" : "Activity",
+  "variable" : "Activity",
+  "modDate" : "2026-03-03T01:21:42.000+00:00",
+  "iDate" : "2019-09-06T14:06:10.000+00:00",
+  "host" : "48190c8c-42c4-46af-8d1a-0cd5db894797",
+  "folder" : "SYSTEM_FOLDER",
+  "siteName" : "demo.dotcms.com",
+  "folderPath" : "/",
+  "icon" : "paragliding",
+  "description" : "Activities available at desitnations",
+  "baseType" : "CONTENT",
+  "fields" : [ {
+    "clazz" : "RowField",
+    "id" : "92660884-13cf-47d1-88aa-cae114e74f3e",
+    "modDate" : "2026-03-03T01:21:42.000+00:00",
+    "name" : "fields-0",
+    "fieldType" : "Row",
+    "fieldTypeLabel" : "Row",
+    "iDate" : "2019-09-06T14:06:10.000+00:00",
+    "variable" : "fields0",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "ColumnField",
+    "id" : "a70e9c49-d33b-46dd-b44b-3e9e6669cccb",
+    "modDate" : "2026-03-03T01:21:42.000+00:00",
+    "name" : "fields-1",
+    "sortOrder" : 1,
+    "fieldType" : "Column",
+    "fieldTypeLabel" : "Column",
+    "iDate" : "2019-09-06T14:06:10.000+00:00",
+    "variable" : "fields1",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "HostFolderField",
+    "indexed" : true,
+    "id" : "3589acb1-a542-49d3-b794-21c1780d34fe",
+    "modDate" : "2026-03-03T01:21:42.000+00:00",
+    "name" : "Host",
+    "variable" : "contentHost",
+    "required" : true,
+    "sortOrder" : 2,
+    "fieldType" : "Host-Folder",
+    "fieldTypeLabel" : "Site or Folder",
+    "iDate" : "2019-09-06T14:06:28.000+00:00",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "TextField",
+    "searchable" : true,
+    "indexed" : true,
+    "listed" : true,
+    "id" : "e1f99107-fd0e-49d4-a099-1cc10aa284d8",
+    "modDate" : "2026-03-03T01:21:42.000+00:00",
+    "name" : "Title",
+    "variable" : "title",
+    "required" : true,
+    "sortOrder" : 3,
+    "fieldType" : "Text",
+    "fieldTypeLabel" : "Text",
+    "iDate" : "2019-09-06T14:07:24.000+00:00",
+    "dataType" : "TEXT"
+  }, {
+    "clazz" : "CustomField",
+    "unique" : true,
+    "indexed" : true,
+    "id" : "9ae4fc76-0d0f-4612-88d1-e178fa1a4a11",
+    "modDate" : "2026-03-03T01:21:42.000+00:00",
+    "name" : "URL Title",
+    "variable" : "urlTitle",
+    "required" : true,
+    "sortOrder" : 4,
+    "values" : "##url-title.vtl\r\n#dotParse(\"/dA/0da30a6f-1cc4-482f-b641-c69ea611a7ba\")",
+    "fieldType" : "Custom-Field",
+    "fieldTypeLabel" : "Custom Field",
+    "iDate" : "2019-09-06T14:08:04.000+00:00",
+    "dataType" : "LONG_TEXT"
+  }, {
+    "clazz" : "TextAreaField",
+    "id" : "806f5a87-48d5-40b3-8df8-8e1f8dbfc6ea",
+    "modDate" : "2026-03-03T01:21:42.000+00:00",
+    "name" : "Description",
+    "variable" : "description",
+    "sortOrder" : 5,
+    "fieldType" : "Textarea",
+    "fieldTypeLabel" : "Textarea",
+    "iDate" : "2019-09-06T14:08:29.000+00:00",
+    "dataType" : "LONG_TEXT"
+  }, {
+    "clazz" : "TagField",
+    "indexed" : true,
+    "id" : "cbca2814-9f43-42df-bc6f-8ce1a151390b",
+    "modDate" : "2026-03-03T01:21:42.000+00:00",
+    "name" : "Tags",
+    "variable" : "tags",
+    "sortOrder" : 6,
+    "fieldType" : "Tag",
+    "fieldTypeLabel" : "Tag",
+    "iDate" : "2019-09-06T14:08:43.000+00:00",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "ColumnField",
+    "id" : "d80efc2d-d968-42f8-a15c-067c2447a20e",
+    "modDate" : "2026-03-03T01:21:42.000+00:00",
+    "name" : "fields-2",
+    "sortOrder" : 7,
+    "fieldType" : "Column",
+    "fieldTypeLabel" : "Column",
+    "iDate" : "2019-09-06T14:06:41.000+00:00",
+    "variable" : "fields2",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "ImageField",
+    "id" : "585b47cb418d97a5e4a8740e1a16af74",
+    "modDate" : "2026-03-03T01:21:42.000+00:00",
+    "name" : "Image",
+    "variable" : "image",
+    "sortOrder" : 8,
+    "fieldType" : "Image",
+    "fieldTypeLabel" : "Image",
+    "iDate" : "2024-05-30T17:19:19.000+00:00",
+    "dataType" : "TEXT"
+  }, {
+    "clazz" : "TextField",
+    "id" : "e977f782-53e7-4c5c-a8ed-ba15bf1d4f45",
+    "modDate" : "2026-03-03T01:21:42.000+00:00",
+    "name" : "Alt Tag",
+    "variable" : "altTag",
+    "sortOrder" : 9,
+    "fieldType" : "Text",
+    "fieldTypeLabel" : "Text",
+    "iDate" : "2019-09-06T14:07:05.000+00:00",
+    "dataType" : "TEXT"
+  }, {
+    "clazz" : "RowField",
+    "id" : "7dad4390-3fad-498d-ae91-20aee43d5b19",
+    "modDate" : "2026-03-03T01:21:42.000+00:00",
+    "name" : "fields-3",
+    "sortOrder" : 10,
+    "fieldType" : "Row",
+    "fieldTypeLabel" : "Row",
+    "iDate" : "2019-09-12T19:18:21.000+00:00",
+    "variable" : "fields3",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "ColumnField",
+    "id" : "54699dae-f65a-477d-875e-06019a544fd4",
+    "modDate" : "2026-03-03T01:21:42.000+00:00",
+    "name" : "fields-4",
+    "sortOrder" : 11,
+    "fieldType" : "Column",
+    "fieldTypeLabel" : "Column",
+    "iDate" : "2019-09-12T19:18:21.000+00:00",
+    "variable" : "fields4",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "WysiwygField",
+    "id" : "b3b7d7c2-3dcd-4fca-af31-8eda00363eab",
+    "modDate" : "2026-03-03T01:21:42.000+00:00",
+    "name" : "Body",
+    "variable" : "body",
+    "sortOrder" : 12,
+    "fieldType" : "WYSIWYG",
+    "fieldTypeLabel" : "WYSIWYG",
+    "fieldVariables" : [ {
+      "clazz" : "com.dotcms.contenttype.model.field.ImmutableFieldVariable",
+      "id" : "0037cc24-7bd9-4fd1-88a7-f8197def80ab",
+      "fieldId" : "b3b7d7c2-3dcd-4fca-af31-8eda00363eab",
+      "name" : null,
+      "key" : "tinymceprops",
+      "value" : "#set($dontShowIcon=true) #dotParse('/application/wysiwyg/wysiwyg-minimal.vtl')",
+      "userId" : null,
+      "modDate" : null
+    } ],
+    "iDate" : "2019-09-12T19:17:34.000+00:00",
+    "dataType" : "LONG_TEXT"
+  } ],
+  "detailPage" : "//demo.dotcms.com/activities/activity-detail-page",
+  "urlMapPattern" : "/activities/{urlTitle}",
+  "metadata" : {
+    "CONTENT_EDITOR2_ENABLED" : false
+  },
+  "workflows" : [ {
+    "id" : "d61a59e1-a49c-46f2-a929-db2b4bfa88b2",
+    "variableName" : "SystemWorkflow"
+  } ],
+  "systemActionMappings" : {
+    "NEW" : "b9d89c80-3d88-4311-8365-187323c96436"
+  },
+  "dotCMSObjectType" : "ContentType"
+}

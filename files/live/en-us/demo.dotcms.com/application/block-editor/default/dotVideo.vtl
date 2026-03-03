@@ -1,0 +1,11 @@
+#set ($content = $item.attrs.data)
+<div class="video-player-wrapper">
+  <video class="video-player" controls="" src="${content.asset}" with="360px" height="202px"></video>
+  <div class="video-caption">
+      #if($UtilMethods.isSet($dotContentMap.title))
+        $!{dotContentMap.title}
+      #else
+        $!{assetBinaryFileTitle}
+      #end
+  </div>
+</div>

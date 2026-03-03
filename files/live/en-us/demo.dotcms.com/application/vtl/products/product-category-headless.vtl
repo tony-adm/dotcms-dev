@@ -1,0 +1,11 @@
+#set($results = $dotcontent.pull("+contentType:ProductLineLandingPage +(conhost:48190c8c-42c4-46af-8d1a-0cd5db894797 conhost:SYSTEM_HOST)",10,"modDate desc"))
+#set($data = [])
+
+#foreach($con in $results)
+	#set($category = {})
+	#set($category.title = $con.title)
+	#set($category.url = $con.url)
+	#set($wildCard = $data.add($category))
+#end
+
+$!dotJSON.put("categories", $data)

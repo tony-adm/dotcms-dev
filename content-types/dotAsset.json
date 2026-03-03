@@ -1,0 +1,75 @@
+{
+  "clazz" : "DotAssetContentType",
+  "id" : "f2d8a1c7-2b77-2081-bcf1-b5348988c08d",
+  "name" : "dotAsset",
+  "variable" : "dotAsset",
+  "modDate" : "2026-03-03T01:21:47.000+00:00",
+  "iDate" : "2020-04-16T19:14:43.255+00:00",
+  "host" : "SYSTEM_HOST",
+  "folder" : "SYSTEM_FOLDER",
+  "siteName" : "systemHost",
+  "folderPath" : "/",
+  "icon" : "assessment",
+  "description" : "Default Content Type for DotAsset",
+  "baseType" : "DOTASSET",
+  "fields" : [ {
+    "clazz" : "HostFolderField",
+    "searchable" : true,
+    "indexed" : true,
+    "id" : "d8719d24-df37-3a20-9442-75fb423cef7e",
+    "modDate" : "2026-03-03T01:21:47.000+00:00",
+    "name" : "Site or Folder",
+    "variable" : "hostFolder",
+    "fieldType" : "Host-Folder",
+    "fieldTypeLabel" : "Site or Folder",
+    "iDate" : "2020-04-16T19:14:43.000+00:00",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "BinaryField",
+    "searchable" : true,
+    "indexed" : true,
+    "listed" : true,
+    "id" : "06d5ecb5-5334-3cb7-a883-f029d12e6a0b",
+    "modDate" : "2026-03-03T01:21:47.000+00:00",
+    "name" : "Asset",
+    "variable" : "asset",
+    "required" : true,
+    "sortOrder" : 1,
+    "fixed" : true,
+    "fieldType" : "Binary",
+    "fieldTypeLabel" : "Binary",
+    "iDate" : "2020-04-16T19:14:43.000+00:00",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "TagField",
+    "searchable" : true,
+    "indexed" : true,
+    "id" : "d8720d13-df48-4b29-9331-75fa314def7e",
+    "modDate" : "2026-03-03T01:21:47.000+00:00",
+    "name" : "Tags",
+    "variable" : "tags",
+    "sortOrder" : 2,
+    "fieldType" : "Tag",
+    "fieldTypeLabel" : "Tag",
+    "fieldVariables" : [ {
+      "clazz" : "com.dotcms.contenttype.model.field.ImmutableFieldVariable",
+      "id" : "c23d2bdb-2a81-4b91-89f0-91e71d281e36",
+      "fieldId" : "d8720d13-df48-4b29-9331-75fa314def7e",
+      "name" : null,
+      "key" : "dotAITagSrc",
+      "value" : "asset",
+      "userId" : null,
+      "modDate" : null
+    } ],
+    "iDate" : "2020-04-16T19:14:43.000+00:00",
+    "dataType" : "SYSTEM"
+  } ],
+  "workflows" : [ {
+    "id" : "d61a59e1-a49c-46f2-a929-db2b4bfa88b2",
+    "variableName" : "SystemWorkflow"
+  } ],
+  "systemActionMappings" : {
+    "NEW" : "b9d89c80-3d88-4311-8365-187323c96436"
+  },
+  "dotCMSObjectType" : "ContentType"
+}

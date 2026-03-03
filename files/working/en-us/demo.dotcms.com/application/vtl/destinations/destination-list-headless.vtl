@@ -1,0 +1,20 @@
+#set($destinations = [])
+#foreach($con in $dotcontent.pull("+contentType:Destination +(conhost:48190c8c-42c4-46af-8d1a-0cd5db894797 conhost:SYSTEM_HOST)",10,"Destination.title"))
+    #set($destination = {})
+    #set($destination.title = $con.title)
+    #set($destination.url = $con.url)
+    #set($destination.image = "/dA/$con.identifier/image/480maxw/405cw/260ch/80q/13ro/$con.image.name")
+    #set($destination.shortDescription = $con.shortDescription)
+    #set($destination.activities = [])
+    #if($con.activities.size() > 0)
+        #foreach($activity in $con.activities)
+            #set($activityResult = $destination.activities.add($activity.title))
+        #end
+    #end
+    #set($destination.selectValue = $con.type.selectValue)
+    #set($destination.identifier = $con.identifier)
+    #set($destination.inode = $con.inode)
+    #set($result = $destinations.add($destination))
+#end
+
+$!dotJSON.put("destinations", $!destinations)

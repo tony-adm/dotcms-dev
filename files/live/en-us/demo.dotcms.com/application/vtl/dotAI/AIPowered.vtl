@@ -1,0 +1,135 @@
+## AI dotAI Powered V2
+
+#set( $promptTitleField = "title" )
+#set( $promptBodyField = "blogContent" )
+#set( $metaDescriptionFieldId = "metaDescription" )
+#set( $seoPromptBase = "Create a meta description for SEO under 155 characters maximum, no exceptions. Rules:
+- Must be under 155 characters (strict limit)
+- Include key terms from title and content
+- Be engaging but concise
+- Use active voice
+- Include a brief call to action
+- Output only the meta description text
+- No labels or additional text
+
+Title: <title></title>
+Content: <content></content>
+
+Generate only the meta description text, ensuring it's under 155 characters." )
+
+<div style="text-align: right;">
+    <span 
+        #if (!$ai.isAiEnabled())
+        style="color: #FF4D4F; margin-right: 10px; font-size: 13px;"
+        #end
+        #if ($ai.isAiEnabled())
+        style="display: none;"
+        #end>
+        Please configure dotAI to enable the "Generate with dotAI" feature.
+    </span>
+    <button 
+        id="generateButton"
+        type="button"
+        style="padding: 8px 16px; cursor: pointer; background: #FFFFFF; border: 1px solid #ccc; border-radius: 4px;"
+        #if ($ai.isAiEnabled())onclick="handleAiGeneration()"#end
+        #if (!$ai.isAiEnabled())disabled#end>
+        <span id="buttonText">Generate Meta Description with dotAI</span>
+        <span id="loadingIndicator" style="display: none;">Generating...</span>
+    </button>
+</div>
+
+<script>
+    let isGenerating = false;
+    const generateButton = document.getElementById('generateButton');
+    const buttonText = document.getElementById('buttonText');
+    const loadingIndicator = document.getElementById('loadingIndicator');
+    const bodyFieldId = '$promptBodyField';
+
+    function setLoadingState(loading) {
+        isGenerating = loading;
+        generateButton.disabled = loading;
+        buttonText.style.display = loading ? 'none' : 'inline';
+        loadingIndicator.style.display = loading ? 'inline' : 'none';
+    }
+
+    function generateSeoPrompt(title, content) {
+        const promptTemplate = `$seoPromptBase`;
+        return promptTemplate
+            .replace('<title></title>', title)
+            .replace('<content></content>', content);
+    }
+
+    function getBodyContent() {
+        // Intentar obtener el contenido del campo nuevo
+        let content = DotCustomFieldApi.get(bodyFieldId);
+        
+        // Si no existe, intentar con el formato del editor antiguo
+        if (!content) {
+            const editorField = `editor-input-value-${bodyFieldId}`;
+            content = DotCustomFieldApi.get(editorField);
+        }
+        
+        return content || '';
+    }
+
+    async function getAiResponse(prompt) {
+        const uri = encodeURI(`/api/v1/ai/text/generate`);
+        return fetch(uri, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ prompt })
+        });
+    }
+
+    function validateResponse(data) {
+        if (!data?.choices?.[0]?.message?.content) {
+            console.error('Invalid response from dotAI');
+            return false;
+        }
+        return data.choices[0];
+    }
+
+    async function handleAiGeneration() {
+        if (isGenerating) return;
+        
+        try {
+            setLoadingState(true);
+            
+            const title = DotCustomFieldApi.get('$promptTitleField') || '';
+            const body = getBodyContent();
+
+            if (!title.trim()) {
+                alert('Title field is required');
+                return;
+            }
+            
+            if (!body.trim()) {
+                alert('Content field is required');
+                return;
+            }
+
+            const prompt = generateSeoPrompt(title, body);
+            const response = await getAiResponse(prompt);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            const result = validateResponse(data);
+            
+            if (result) {
+                DotCustomFieldApi.set('$metaDescriptionFieldId', result.message.content);
+            } else {
+                throw new Error('Invalid AI response format');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while generating the AI response');
+        } finally {
+            setLoadingState(false);
+        }
+    }
+</script>

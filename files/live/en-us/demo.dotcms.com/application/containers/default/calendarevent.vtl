@@ -1,0 +1,15 @@
+<!-- Container Code: /application/containers/defualt/calendarevent.vtl -->
+
+<div class="post post-classic mb-5">
+	<a class="post-img-wrap" href="/events/$urlTitle">
+		<img class="post-img" src="/dA/$!{dotContentMap.identifier}/image/500maxw/370cw/227ch/80q/13ro/$!{dotContentMap.image.name}" alt="$dotContentMap.title">
+	</a>
+	<h3 class="post-title"><a href="/events/$dotContentMap.urlTitle">$dotContentMap.title</a></h3>
+	#set($x = $UtilMethods.prettyShortenString("$dotContentMap.description", 120))
+	#set($x = $x.replaceAll("</?[^>]+/?>", ""))
+	<p class="post-text">$x</p>
+	<time class="post-classic-time" datetime="$date.format('yyyy-MM-dd h:mm a', ${dotContentMap.startDate})">
+		<span class="heading-1">$date.format('dd', ${dotContentMap.startDate})</span>
+		$date.format('MMMM', ${dotContentMap.startDate})
+	</time>
+</div>

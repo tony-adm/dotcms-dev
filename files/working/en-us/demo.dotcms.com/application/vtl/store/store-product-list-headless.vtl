@@ -1,0 +1,15 @@
+#set($results = $dotcontent.pull("+contentType:Product +(conhost:48190c8c-42c4-46af-8d1a-0cd5db894797 conhost:SYSTEM_HOST) #if($productLineCategoriesKeys.size() > 0) +(categories:$productLineCategoriesKeys[0]) #end",${quantity},"modDate desc"))
+#set($products = [])
+#foreach($product in $results)
+    #set($productItem = {})
+    #set($productItem.identifier = $product.identifier)
+    #set($productItem.inode = $product.inode)
+    #set($productItem.image = "/dA/$product.identifier/image/245h/245ch/230cw/80q/$product.image.name")
+    #set($productItem.title = $product.title)
+    #set($productItem.url = "/store/products/$product.urlTitle")
+    #set($productItem.retailPrice = $product.retailPrice)
+    #set($productItem.salePrice = $product.salePrice)
+    #set($resultsItem = $products.add($productItem))
+#end
+
+$!dotJSON.put("products", $products)

@@ -1,0 +1,711 @@
+#if ($ai.isAiEnabled())
+
+<script>
+
+  let reader;
+  const threshold = 0.25;
+  const searchLimit = 20;
+  const apiKey = {};
+
+  const sanitizeInput = (input) => {
+    // Replace potentially harmful characters with their HTML entity equivalents
+    return input ?  input.replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;') : null;
+  }
+
+  const getParamsForSearch = () => {
+    let url = new URL(window.location.href);
+    let q = url.searchParams.get('q');
+    let type = url.searchParams.get('type');
+
+    document.getElementById("question").value = sanitizeInput(q) || '';
+
+    if (type == "keywords") {
+      document.getElementById("keywords").checked = true;
+      document.getElementById("search-btn").innerHTML = "Search";
+
+      if (q) {
+        triggerSearch();
+      }
+    } else if (type == "default" ) {
+        if (q) { 
+            doSearchWithPrompt(q);
+        } 
+        
+    } else {
+        clearSearch();
+    } 
+
+    
+
+  }
+
+  const triggerSearch = () => {
+    let url = new URL(window.location.href);
+    let params = url.searchParams;
+    let query = document.getElementById("question").value || url.searchParams.get("q");
+
+    if (query == undefined || query.length == 0) {
+      alert("please enter a query/prompt");
+      resetLoader();
+      return false;
+    }
+
+    //Update params
+    params.set("q", sanitizeInput(query));
+    params.set("type", document.getElementById("keywords").checked ? "keywords" : "default");
+
+    // Update URL
+    window.history.replaceState({}, "", url.href);
+
+    // Hide elements on page and render loading wheel
+    document.getElementById("loader").style.display = "block";
+    document.getElementById("submitChat").style.display = "none";
+    document.getElementById("semanticSearchResults").innerHTML = "";
+    document.getElementById("answer").style.display = "none";
+    document.getElementById("answer").innerHTML = "";
+    document.getElementById("startOver").style.display = "none";
+
+    const aiChat = document.getElementById("aiChat").checked;
+
+    setTimeout(function () {
+      doSearch().then(() => {
+        if (aiChat) {
+          doSearchChatJsonDebounced();
+        }
+      });
+    }, 500);
+  }
+
+
+  const buildSearchPrompt = () => {
+    let formData = {}
+    formData.prompt = document.getElementById("question").value;
+    formData.threshold = threshold;
+    formData.searchLimit = searchLimit;
+    formData.stream = true;
+    formData.responseLengthTokens = 4096;
+    formData.indexName =  'travelBot';
+    return formData;
+  }
+
+  const doSearchWithPrompt = (prompt) => {
+    document.getElementById("question").value = prompt;
+    triggerSearch();
+  }
+
+  const clearElements = () => {
+    document.getElementById("semanticSearchResults").style.display = "none";
+    document.getElementById("answer").style.display = "none";
+    document.getElementById("answer").innerHTML = "";
+    document.getElementById("startOver").style.display = "none";
+    document.getElementById("question").value = "";
+  }
+
+  const clearSearch = () => {
+    if (reader) {
+      reader.cancel().then(() => {
+        clearElements();
+      });
+    } else {
+      clearElements();
+    }
+  }
+
+
+  /**
+   * Gets the API Key once and caches it
+   **/
+
+  const getApiKey = (e) => {
+
+    if (apiKey.hasOwnProperty("key")) {
+      return apiKey;
+    }
+    return fetch("/api/vtl/ai", {
+      method: "GET", headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        apiKey.key = data.key;
+        return apiKey;
+      });
+  }
+
+  const onBtnClick = () => {
+    let url = new URL(window.location.href);
+    let searchBox = document.getElementById("question")
+    let query = searchBox.value;
+
+    if (query == undefined || query.length == 0) {
+      alert("please enter a query/prompt");
+      resetLoader();
+      return false;
+    }
+
+    searchBox.value = sanitizeInput(query);
+
+    // always reset page to 0 when doing a new search
+    url.searchParams.set("q", sanitizeInput(query));
+    window.history.replaceState({}, "", url.href);
+
+    triggerSearch();
+  }
+
+  const doSearchChatJsonDebounced = async () => {
+
+    const formData = buildSearchPrompt()
+
+    if (formData.prompt == undefined || formData.prompt.trim().length == 0) {
+      alert("please enter a query/prompt");
+      resetLoader();
+      return false;
+    }
+
+    let line = "";
+    let lines = [];
+    try {
+      const response = await fetch('/api/v1/ai/completions', {
+        method: "POST", body: JSON.stringify(formData), headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer " + getApiKey().key
+        }
+      });
+
+      // Read the response as a stream of data
+      reader = response.body?.pipeThrough(new TextDecoderStream()).getReader();
+      if (!reader) return false;
+
+      document.getElementById("answer").innerHTML = "";
+      document.getElementById("answer").innerHTML += "<strong>Summary:</strong>\n\n";
+      document.getElementById("answer").style.display = "block";
+      let reset = true;
+
+      while (true) {
+        const { value, done } = await reader.read();
+
+        if (done) {
+          break;
+        }
+        lines = (line + value).split('\ndata: ');
+
+        for (line of lines) {
+
+          line = line.replace(/^data: /, '').trim();
+          if (line.length === 0) continue; // ignore empty message
+          if (line.startsWith(':')) continue; // ignore sse comment message
+
+          if (line === '[DONE]') {
+            break;
+          }
+          try {
+            const json = JSON.parse(line);
+            line = "";
+            const value = json.choices[0].delta.content;
+            if (value === undefined) {
+              continue;
+            }
+            document.getElementById("answer").innerHTML += value;
+            if (reset) {
+              resetLoader();
+              reset = false;
+            }
+          } catch (e) {
+            // line is half sent, will append to the next value
+            console.log("line:" + line);
+          }
+        }
+      }
+    } catch (e) {
+      console.log("got an error:", e);
+      console.log("line:" + line);
+      console.log("lines:" + lines);
+    } finally {
+      resetLoader();
+    }
+
+    return true;
+  };
+
+  const resetLoader = () => {
+    document.getElementById("submitChat").style.display = "";
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("startOver").style.display = "block";
+  }
+
+  const doSearch = async () => {
+
+    const formData = buildSearchPrompt();
+
+    const semanticSearchResults = document.getElementById("semanticSearchResults");
+    semanticSearchResults.style.display = "block";
+
+    const truncateString = (str, num) => {
+      if (!str) return;
+
+      if (str.length <= num) {
+        return str
+      }
+      return str.slice(0, num) + '...'
+    }
+
+
+    if (document.getElementById("aiChat").checked) {
+      fetch("/api/v1/ai/search", {
+        method: "POST", body: JSON.stringify(formData), headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer " + getApiKey().key
+        }
+      }).then(response => response.json()).then(data => {
+        semanticSearchResults.innerHTML = "<p><strong>References</strong></p>";
+        data.dotCMSResults.map(row => {
+          if (!row.URL_MAP_FOR_CONTENT) return null;
+          let referenceDiv = document.createElement("div");
+          let titleDiv = document.createElement("div");
+          let refTitle = document.createElement("a");
+          refTitle.innerHTML = row.title;
+          refTitle.href = row.URL_MAP_FOR_CONTENT;
+          refTitle.className = "ref-title";
+          referenceDiv.append(titleDiv);
+          titleDiv.append(refTitle);
+
+          let refDescription = document.createElement("div");
+          refDescription.innerHTML = truncateString(row.matches[0].extractedText, 200);
+          refDescription.className = "ref-description";
+
+          referenceDiv.append(refDescription);
+
+          let chipsDiv = document.createElement("div");
+          let chip1 = document.createElement("div");
+          let chip2 = document.createElement("div");
+          let chip3 = document.createElement("div");
+
+          let channel = row.contentType == 'DotcmsDocumentation' ? 'Documentation' : row.contentType;
+          channel = (row.contentType == 'noShow' || row.contentType == undefined) ? 'Webpage' : channel;
+
+          chip1.innerHTML = `<strong>${channel}<strong>`;
+          chip2.innerHTML = `Score: <strong>${(1 - parseFloat(row.matches[0].distance)).toFixed(2) * 100}%</strong>`;
+          chip3.innerHTML = `Matches: <strong>${row.matches.length}</strong>`;
+
+          chipsDiv.className = "ref-chips";
+          chip1.className = "ref-channel";
+          chip2.className = "ref-score";
+          chip3.className = "ref-match";
+
+          chipsDiv.append(chip1);
+          chipsDiv.append(chip2);
+          chipsDiv.append(chip3);
+          referenceDiv.append(chipsDiv);
+
+          semanticSearchResults.append(referenceDiv);
+        })
+
+        if (document.getElementById("keywords").checked){
+            resetLoader();     
+        } 
+
+        return true;
+      })
+    } else if (document.getElementById("keywords").checked) {
+      let q = document.getElementById("question").value;
+      let sanitizedQuery = sanitizeInput(q)
+     
+
+      fetch("/api/vtl/search/?" + new URLSearchParams({
+        q: sanitizedQuery,
+        p: 0,
+        filter: 'default'
+      }).toString()).then(response => response.json()).then(data => {
+
+        // There is no search index defined
+        if( data.query == null ) {
+            semanticSearchResults.innerHTML = `<p>There is no default Site Search index. Please create one to enable <b>keyword</b> search.</p>`;
+        } else {
+            const totalHits = data.results.length ? data.results.length : 0;
+            semanticSearchResults.innerHTML = `<h3 class="results-info">We found <b>${totalHits}</b> results in your search for <b>"${sanitizedQuery}"</b></h3><p><strong>References</strong></p>`;
+            let numOfPages = totalHits / 10;
+
+            if (data.results) {
+                data.results.map(row => {
+                let referenceDiv = document.createElement("div");
+                let titleDiv = document.createElement("div");
+                let refTitle = document.createElement("a");
+                refTitle.innerHTML = row.title;
+                refTitle.href = row.uri;
+                refTitle.className = "ref-title";
+                referenceDiv.append(titleDiv);
+                titleDiv.append(refTitle);
+
+                let refDescription = document.createElement("div");
+                refDescription.innerHTML = truncateString(row.highlight, 200);
+                refDescription.className = "ref-description";
+
+                referenceDiv.append(refDescription);
+
+                let chipsDiv = document.createElement("div");
+                let chip1 = document.createElement("div");
+                let chip2 = document.createElement("div");
+                let chip3 = document.createElement("div");
+
+                let channel = (row.contentType == 'noShow' || row.contentType == undefined) ? 'Webpage' : row.contentType;
+
+                chip1.innerHTML = `<strong>${channel}<strong>`;
+                chip2.innerHTML = `Score: <strong>${(row.score / 20 * 100).toFixed(0)}%</strong>`;
+                chip3.innerHTML = `Matches: <strong>${row.matches}</strong>`;
+
+                chipsDiv.className = "ref-chips";
+                chip1.className = "ref-channel";
+                chip2.className = "ref-score";
+                chip3.className = "ref-match";
+
+                chipsDiv.append(chip1);
+                chipsDiv.append(chip2);
+                chipsDiv.append(chip3);
+                referenceDiv.append(chipsDiv);
+
+                semanticSearchResults.append(referenceDiv);
+                });
+            }
+
+        }
+
+        let href = new URL(window.location.href);
+        let path = href.searchParams;    
+
+        if (document.getElementById("keywords").checked) resetLoader();
+
+        return true;
+      });
+    }
+  }
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    getApiKey();
+    getParamsForSearch();
+
+    document.getElementById("submitChat").addEventListener('click', function (event) {
+      if (event.target && event.target.matches("input[type='radio']")) {
+        if (event.target.id == "aiChat") {
+          document.getElementById("search-btn").innerHTML = "Ask AI";
+          document.getElementById("question").placeholder = "Ask me a question about travel tips, destinations, or activities";
+        } else if (event.target.id == "keywords") {
+          document.getElementById("search-btn").innerHTML = "Search";
+          document.getElementById("question").placeholder = "Enter keywords to search for travel information";
+        }
+      }
+    });
+  });
+
+</script>
+
+
+
+
+<div class="search-wrapper-page">
+  <form id="chatForm" onsubmit="return false;">
+
+    <div class="search-input-container">
+      <input type="text" class="ai-search-box" id="question" placeholder="Ask Ai about Blogs, Destinations or Activities" />
+      <button id="search-btn" class="ask-btn" onclick="onBtnClick()">
+        Ask AI
+      </button>
+    </div>
+
+    <div class="search-container">
+      <div class="search-sources">
+        <div class="filter-type-wrapper" id="submitChat">
+          <div class="filter-type-search">
+            <div class="sources-title">Type:</div>
+            <input type="radio" id="aiChat" name="type" value="default" checked><label class="source" for="aiChat">AI
+              Chat</label>
+            <input type="radio" id="keywords" name="type" value="keywords"><label class="source"
+              for="keywords">Keyword</label>
+          </div>
+        </div>
+        <div class="start-over-div">
+          <button id="startOver" class="start-over-btn" onclick="clearSearch()">Clear <span>Search</span></button>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <div id="loader" class="mt-5" style="display: none;">
+          <div id="dot"></div>
+        </div>
+        <div class="chat-textarea" role="textbox" id="answer" contenteditable="true"></div>
+      </div>
+      <div id="semanticSearchResults"></div>
+    </div>
+
+
+  </form>
+</div>
+
+<style>
+        /* General wrapper styles */
+        .search-wrapper-page {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            max-width: 1080px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-wrapper-page .results-info {
+            margin: 20px 0;
+        }
+
+        /* Form styles */
+        #chatForm {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Input container styles */
+        .search-input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .ai-search-box {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .ask-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .ask-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Search container styles */
+        .search-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-sources {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .filter-type-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .filter-type-search {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .filter-type-search label {
+            margin-bottom: 0px
+        }
+
+        .sources-title {
+            font-weight: bold;
+        }
+
+    
+
+        .start-over-div {
+            text-align: right;
+        }
+
+        .start-over-btn {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .start-over-btn:hover {
+            background-color: #c82333;
+        }
+
+
+        /* Loader styles */
+        #loader {
+            text-align: center;
+        }
+
+        #dot {
+            width: 20px;
+            height: 20px;
+            background-color: #007bff;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+         /* Chat textarea styles */
+        .chat-textarea {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 16px;
+            line-height: 1.5;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+        }
+
+        /* Reference results styles */
+        #semanticSearchResults {
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .ref-title {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .ref-title:hover {
+            text-decoration: underline;
+        }
+
+        .ref-description {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .ref-chips {
+            display: flex;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            color: #1e1e1e;
+            font-size: 12px;
+            font-style: normal;
+            line-height: normal;
+            gap: 1rem;
+        }
+
+        .ref-channel {
+            border-radius: 12px;
+            background: #d3d3d6;
+            padding: 3px 8px
+        }
+
+        .ref-score {
+            border-radius: 12px;
+            background: #c1f0ff;
+            padding: 3px 8px;
+        }
+
+        .ref-match {
+            border-radius: 12px;
+            background: #f6ddb6;
+            padding: 3px 8px;
+        }
+
+
+
+        /* Pagination styles */
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        .pagination li {
+            margin: 0 5px;
+        }
+
+        .pagination li a {
+            display: block;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .pagination li a:hover {
+            background-color: #f1f1f1;
+        }       
+</style>
+
+
+
+   
+#else
+     <style>
+        .empty-state-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .empty-state-message {
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        .empty-state-message h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .empty-state-message p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .empty-state-message .highlight {
+            font-weight: bold;
+        }
+    </style>
+
+    <div class="empty-state-container">
+        <div class="empty-state-message">
+            <h1>Welcome to TravelBot</h1>
+            <p>TravelBot is built with <span class="highlight">dotAI</span>, the dotCMS suite of AI features.</p>
+            <p>Please configure the dotAI App to enable dotAI and TravelBot.</p>
+        </div>
+    </div>
+#end

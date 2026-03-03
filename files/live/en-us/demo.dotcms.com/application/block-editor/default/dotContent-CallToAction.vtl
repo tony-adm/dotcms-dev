@@ -1,0 +1,22 @@
+#set ($content = $item.attrs.data)
+<div class="blog-contentlet">
+    <img class="blog-contentlet__image" alt="$!content.title" src="/dA/$!content.identifier/370w/20q/$!{content.image.name}">
+    <div class="blog-contentlet__desc">
+        <h3>$!{content.headline}</h3>
+        $!{content.subHeading}
+        <div class="btn-group mt-3">
+            #if($UtilMethods.isSet($content.buttonText1) && $UtilMethods.isSet($content.buttonUrl1))
+                <a class="btn btn-primary" href="$content.buttonUrl1">$content.buttonText1</a>
+            #end
+
+            #if($UtilMethods.isSet($content.buttonText2) && $UtilMethods.isSet($content.buttonUrl2))
+                #if($targetLink2 == "iframe")
+                    #set($content.target = "data-lightbox='iframe'")
+                #elseif($content.targetLink2 == "new")
+                    #set($content.target = "target='_blank'")
+                #end
+                <a class="btn btn-flat" href="$buttonUrl2" $!{content.target}>$content.buttonText2</a>
+            #end
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+#set ($content = $item.attrs.data)
+<div class="blog-contentlet">
+    <img class="blog-contentlet__image" alt="$!content.title" src="/dA/$!content.identifier/370w/20q/$!{content.image.name}">
+	<div class="blog-contentlet__desc">
+        <h3><a href="/events/$content.urlTitle">$content.title</a></h3>
+        <h4>
+            #set($eventDate = $dotcontent.find($content.inode).startDate)
+            $date.format('MMM dd',$eventDate)
+        </h4>
+        #set($x = $UtilMethods.prettyShortenString("$content.description", 150))
+        #set($x = $x.replaceAll("</?[^>]+/?>", ""))
+        <p class="post-text">$x</p>
+    </div>
+    <div class="blog-contentlet__action">
+        <a class="button button-primary" href="/events/$content.urlTitle">Register</a>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<!-- Container Code: /application/containers/blog.vtl -->
+
+<div class="post post-modern post-height">
+	<a class="post-img-wrap" href="/blog/post/$dotContentMap.urlTitle">
+		<img class="post-img" src="/dA/${dotContentMap.identifier}/image/370w/50q/$!{dotContentMap.image.name}" alt="$dotContentMap.title" width="370">
+	</a>
+	<div class="post-body">
+		<div class="post-content">
+			<h3 class="post-title"><a href="/blog/post/$urlTitle">${dotContentMap.title}</a></h3>
+			<p class="post-text">$UtilMethods.prettyShortenString("$dotContentMap.teaser", 120)</p>
+		</div>
+		<div class="post-bottom-panel">
+			<div>
+				<div class="group-xl">
+					<div class="post-modern-time">
+						<span class="post-icon icon mdi mdi-calendar-clock"></span>
+						<time datetime="$date.format('yyyy-MM-dd h:mm a', ${dotContentMap.postingDate})">$date.format('MMMM dd, yyyy', ${dotContentMap.postingDate})</time>
+					</div>
+				</div>
+			</div>
+		</div>
+		<span class="badge badge-primary">
+			$!{dotContentMap.tags.get(0)}
+		</span>
+	</div>
+</div>

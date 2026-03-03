@@ -1,0 +1,12 @@
+#set ($content = $item.attrs.data)
+
+<div class="blog-contentlet">
+    <img class="blog-contentlet__image" alt="$!content.title" src="/dA/$!content.identifier/370w/20q"/>
+
+    <div class="blog-contentlet__desc">
+        <h3>$!content.title</h3>
+        <span>
+            To learn more about customizing the displaying of content type like <b>$!content.contentType</b> in the block editor please read our <a href="https://www.dotcms.com/docs/latest/block-editor#RenderingContent" target="_blank">documentation on the Block Editor</a>.
+        </span>
+    </div>
+</div>

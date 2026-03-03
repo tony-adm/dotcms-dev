@@ -1,0 +1,27 @@
+#if ($UtilMethods.isSet($widgetTitle))
+  <h2 class="text-center mb-3">$!{widgetTitle}</h2>
+#end
+
+#set($related = $dotcontent.find("$!{ContentIdentifier}"))
+#if($related.images.size() > 0)
+  <div class="row no-gutters" data-lightgallery="group">
+      #foreach($con in $related.images)
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <article class="thumbnail-classic thumbnail-classic-fullwidth">
+            <a class="thumbnail-classic-figure" href="/dA/$con.identifier/1200maxw/80q/13ro/$con.fileName" data-lightgallery="item">
+                <img src="/dA/$con.identifier/500h/450ch/450cw/80q/13ro/$con.fileName" alt="$!{con.title}" class="img-fluid">
+            </a>
+            <div class="thumbnail-classic-caption">
+                <h4 class="thumbnail-classic-title">$!{con.title}</h4>
+                <p class="thumbnail-classic-text">$!{con.description}</p>
+                <span class="thumbnail-classic-link mdi mdi-plus-circle-outline"></span>
+            </div>
+          </article>
+        </div>
+      #end
+  </div>
+#else
+<div class="alert alert-info">
+    OOPS! We can't find any images associated with this gallery.
+</div>
+#end

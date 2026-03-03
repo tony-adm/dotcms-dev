@@ -1,0 +1,138 @@
+{
+  "clazz" : "DotAssetContentType",
+  "id" : "c77450b834901a20c8193ef9d561ee5b",
+  "name" : "Video",
+  "variable" : "Video",
+  "modDate" : "2026-03-03T01:21:40.000+00:00",
+  "iDate" : "2024-06-04T19:00:00.000+00:00",
+  "host" : "SYSTEM_HOST",
+  "folder" : "SYSTEM_FOLDER",
+  "siteName" : "systemHost",
+  "folderPath" : "/",
+  "icon" : "movie",
+  "baseType" : "DOTASSET",
+  "fields" : [ {
+    "clazz" : "RowField",
+    "id" : "2ae69c3d65b5786e4e38720bdecd2f15",
+    "modDate" : "2026-03-03T01:21:39.000+00:00",
+    "name" : "fields-0",
+    "fieldType" : "Row",
+    "fieldTypeLabel" : "Row",
+    "iDate" : "2024-06-04T19:00:00.000+00:00",
+    "variable" : "fields0",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "ColumnField",
+    "id" : "c54eaa8844add5cae2444dd37188c662",
+    "modDate" : "2026-03-03T01:21:39.000+00:00",
+    "name" : "fields-1",
+    "sortOrder" : 1,
+    "fieldType" : "Column",
+    "fieldTypeLabel" : "Column",
+    "iDate" : "2024-06-04T19:00:00.000+00:00",
+    "variable" : "fields1",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "HostFolderField",
+    "searchable" : true,
+    "indexed" : true,
+    "id" : "9e1df7d2fbbea3c25f2c99694a0a862f",
+    "modDate" : "2026-03-03T01:21:39.000+00:00",
+    "name" : "Site or Folder",
+    "variable" : "hostFolder",
+    "sortOrder" : 2,
+    "fieldType" : "Host-Folder",
+    "fieldTypeLabel" : "Site or Folder",
+    "iDate" : "2024-06-04T19:00:00.000+00:00",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "BinaryField",
+    "searchable" : true,
+    "indexed" : true,
+    "listed" : true,
+    "id" : "d6cc889c37b3e0d7fd5c9dae31e558b7",
+    "modDate" : "2026-03-03T01:21:39.000+00:00",
+    "name" : "Asset",
+    "variable" : "asset",
+    "required" : true,
+    "sortOrder" : 3,
+    "fixed" : true,
+    "fieldType" : "Binary",
+    "fieldTypeLabel" : "Binary",
+    "fieldVariables" : [ {
+      "clazz" : "com.dotcms.contenttype.model.field.ImmutableFieldVariable",
+      "id" : "820776f5-0ae2-40e1-aea3-fc738d23ba28",
+      "fieldId" : "d6cc889c37b3e0d7fd5c9dae31e558b7",
+      "name" : null,
+      "key" : "accept",
+      "value" : "video/*",
+      "userId" : null,
+      "modDate" : null
+    }, {
+      "clazz" : "com.dotcms.contenttype.model.field.ImmutableFieldVariable",
+      "id" : "fe89f398-df1f-47dc-9b58-a1351b94048f",
+      "fieldId" : "d6cc889c37b3e0d7fd5c9dae31e558b7",
+      "name" : null,
+      "key" : "systemOptions",
+      "value" : "{\"allowURLImport\":true,\"allowCodeWrite\":false}",
+      "userId" : null,
+      "modDate" : null
+    } ],
+    "iDate" : "2024-06-04T19:00:00.000+00:00",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "TextField",
+    "id" : "247b4a3da2ac28779668bb4a9bae249e",
+    "modDate" : "2026-03-03T01:21:39.000+00:00",
+    "name" : "Title",
+    "variable" : "title",
+    "sortOrder" : 4,
+    "fieldType" : "Text",
+    "fieldTypeLabel" : "Text",
+    "iDate" : "2024-06-04T19:00:40.000+00:00",
+    "dataType" : "TEXT"
+  }, {
+    "clazz" : "TextAreaField",
+    "id" : "39ce576adedeeca4b9421aeee2e4ec6c",
+    "modDate" : "2026-03-03T01:21:39.000+00:00",
+    "name" : "Description",
+    "variable" : "description",
+    "sortOrder" : 5,
+    "fieldType" : "Textarea",
+    "fieldTypeLabel" : "Textarea",
+    "iDate" : "2024-06-04T19:01:01.000+00:00",
+    "dataType" : "LONG_TEXT"
+  }, {
+    "clazz" : "TagField",
+    "searchable" : true,
+    "indexed" : true,
+    "id" : "8a3bd616a0e03299cb396c14bc75b28e",
+    "modDate" : "2026-03-03T01:21:39.000+00:00",
+    "name" : "Tags",
+    "variable" : "tags",
+    "sortOrder" : 6,
+    "fieldType" : "Tag",
+    "fieldTypeLabel" : "Tag",
+    "iDate" : "2024-06-04T19:00:00.000+00:00",
+    "dataType" : "SYSTEM"
+  }, {
+    "clazz" : "BinaryField",
+    "id" : "8d0f71f7a15acbf64a3b782816c892b7",
+    "modDate" : "2026-03-03T01:21:39.000+00:00",
+    "name" : "Thumbnail",
+    "variable" : "thumbnail",
+    "sortOrder" : 7,
+    "fieldType" : "Binary",
+    "fieldTypeLabel" : "Binary",
+    "iDate" : "2024-06-04T21:22:31.000+00:00",
+    "dataType" : "SYSTEM"
+  } ],
+  "metadata" : {
+    "CONTENT_EDITOR2_ENABLED" : false
+  },
+  "workflows" : [ {
+    "id" : "d61a59e1-a49c-46f2-a929-db2b4bfa88b2",
+    "variableName" : "SystemWorkflow"
+  } ],
+  "dotCMSObjectType" : "ContentType"
+}

@@ -1,0 +1,72 @@
+<head>
+#dotParse("${dotTheme.path}dot_seo.vtl")
+    <title>$!dotSeo.get('pageTitle')</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="dotCMS" content="$!{host.identifier}" />
+    <meta name="description" content="$!dotSeo.get('metaDescription')" />
+    <link rel="canonical" href="https://${host}$!dotSeo.get('canonicalUrl')" />
+    <link rel="icon" href="${dotTheme.path}images/favicon.ico" />
+    <link rel="alternate" hreflang="x-default" href="$dotSeo.get('canonicalUrl')">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="$!dotSeo.get('ogTitle')" />
+    <meta property="og:description" content="$!dotSeo.get('ogDescription')" />
+    <meta property="og:url" content="$!dotSeo.get('canonicalUrl')" />
+    <meta property="og:image" content="$!dotSeo.get('ogImage')" />
+    <meta property="og:image:alt" content="$!dotSeo.get('ogTitle')" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:site_name" content="https://${host}" />
+    <meta property="og:type" content="$!dotSeo.get('ogType')" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@dotcms" />
+    <meta name="twitter:image" content="$!dotSeo.get('ogImage')" />
+
+    <!-- Robots -->
+    <meta name="robots" content="$!dotSeo.get('robots')" />
+    <meta name="robots" content="max-snippet: $!dotSeo.get('snippet')" />
+
+    <!-- CSS -->
+    <link rel="preload" as="style" href="//fonts.googleapis.com/css?family=Oswald:500,600,700%7CRoboto:300,300i,700%7CCondiment%7CDella+Respira">
+    
+    <!-- Precomipled SASS/CSS -->
+    ##<link rel="preload" as="style" href="${dotTheme.path}css/styles_precompiled.css">
+    
+    ## Uncomment this for dotCMS to automatically compile the SASS/CSS 
+    <link rel="preload" as="style" href="${dotTheme.path}css/styles.dotsass">
+    
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald:500,600,700%7CRoboto:300,300i,700%7CCondiment%7CDella+Respira">
+    <link rel="stylesheet" href="${dotTheme.path}css/styles.dotsass">
+
+#if($EDIT_MODE)
+    <style>
+        .edit-button-wrapper {
+            display:flex;
+            position: relative;
+            z-index: 99999999;
+            align-items:center;
+            cursor:pointer; 
+            color: #14151A;
+            font-weight: 700;
+            padding: 4px 8px;
+            width: 140px;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) ;
+        }
+        .edit-button-wrapper:hover{
+            color: #5167F1;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23) !important;
+            transform: scale(1.025) !important;
+        }
+        .edit-button-icon {
+            height: 32px !important;
+            outline: none !important;
+            width: 32px !important;
+            background: #fff url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjNDQ0NDQ0IiBoZWlnaHQ9IjE4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIxOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTMgMTcuMjVWMjFoMy43NUwxNy44MSA5Ljk0bC0zLjc1LTMuNzVMMyAxNy4yNXpNMjAuNzEgNy4wNGMuMzktLjM5LjM5LTEuMDIgMC0xLjQxbC0yLjM0LTIuMzRjLS4zOS0uMzktMS4wMi0uMzktMS40MSAwbC0xLjgzIDEuODMgMy43NSAzLjc1IDEuODMtMS44M3oiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==) no-repeat center center !important;
+        }
+    </style>
+#end
+</head>

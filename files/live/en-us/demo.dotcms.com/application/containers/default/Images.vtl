@@ -1,0 +1,17 @@
+#if($UtilMethods.isSet($dotContentMap.style))
+    <div class="$dotContentMap.style" style="background-image: url('/dA/${dotContentMap.dentifier}/884maxw/80q/13ro/$!{dotContentMap.asset.name}')"></div>
+#else
+<article class="thumbnail-classic mb-5">
+    <a class="thumbnail-classic-figure" href="/dA/${dotContentMap.identifier}/1200w/80q/13ro/$!{dotContentMap.asset.name}" data-lightgallery="item">
+        <picture>
+            <source media="(min-width: 480px)" srcset="/dA/${dotContentMap.identifier}/600w/80q/13ro/$!{dotContentMap.asset.name}, /dA/${dotContentMap.identifier}/1200w/80q/13ro/$!{dotContentMap.asset.name} 2x">
+            <img src="/dA/${dotContentMap.identifier}/480w/80q/13ro/$!{dotContentMap.asset.name}" alt="$!{description}" class="img-fluid">
+        </picture>
+    </a>
+    <div class="thumbnail-classic-caption">
+        <h4 class="thumbnail-classic-title">$!{dotContentMap.title}</h4>
+        <p class="thumbnail-classic-text">$!{dotContentMap.description}</p>
+        <a class="thumbnail-classic-link mdi mdi-plus-circle-outline" href="/dA/${dotContentMap.identifier}/80q/13ro/$!{dotContentMap.asset.name}" data-lightgallery="item"></a>
+    </div>    
+</article>
+#end

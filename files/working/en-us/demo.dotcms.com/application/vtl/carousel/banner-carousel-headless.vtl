@@ -1,0 +1,13 @@
+#set($bannerContent = $dotcontent.find("$!{ContentIdentifier}"))
+#set($banners = [])
+#foreach($!content in $!bannerContent.banners)
+    #set($banner = {})
+    $!banner.put("title", $!{content.title})
+    $!banner.put("image", "/dA/$content.identifier/image/1125cw/450ch/80q/13ro/$content.image.name")
+    $!banner.put("caption", $!{content.caption})
+    $!banner.put("link", $!{content.link})
+    $!banner.put("buttonText", $!{content.buttonText})
+    #set($result = $!banners.add($!banner))
+#end
+
+$!dotJSON.put("banners", $banners)
