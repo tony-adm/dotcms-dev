@@ -1,0 +1,29 @@
+{
+  "containerType": "STANDARD",
+  "friendlyName": "EasyFolio Hero",
+  "identifier": "EasyFolioHeroContainer",
+  "siteName": "demo.dotcms.com",
+  "languageId": 1,
+  "fields": [
+    {
+      "fieldName": "Title",
+      "fieldVariable": "title"
+    },
+    {
+      "fieldName": "Subtitle",
+      "fieldVariable": "subtitle"
+    },
+    {
+      "fieldName": "Primary CTA Text",
+      "fieldVariable": "primaryCtaText"
+    },
+    {
+      "fieldName": "Primary CTA Link",
+      "fieldVariable": "primaryCtaLink"
+    },
+    {
+      "fieldName": "Hero Image",
+      "fieldVariable": "heroImage"
+    }
+  ]
+}

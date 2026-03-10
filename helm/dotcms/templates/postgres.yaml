@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotcms-postgres
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotcms-postgres
+  template:
+    metadata:
+      labels:
+        app: dotcms-postgres
+    spec:
+      containers:
+      - name: postgres
+        image: {{ .Values.postgres.image }}
+        args:
+          - postgres
+          - -c
+          - max_connections={{ .Values.postgres.maxConnections }}
+          - -c
+          - shared_buffers={{ .Values.postgres.sharedBuffers }}
+        env:
+        - name: POSTGRES_DB
+          valueFrom:
+            secretKeyRef:
+              name: dotcms-db-secret
+              key: POSTGRES_DB
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: dotcms-db-secret
+              key: POSTGRES_USER
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dotcms-db-secret
+              key: POSTGRES_PASSWORD
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /var/lib/postgresql
+          name: data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: dotcms-db-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotcms-postgres
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: dotcms-postgres
+  ports:
+  - port: 5432
+    targetPort: 5432

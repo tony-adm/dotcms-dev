@@ -1,0 +1,41 @@
+# Global
+namespace: dotcms
+
+# dotCMS
+dotcms:
+  image: dotcms/dotcms:latest
+  javaOpts: "-Xmx1g"
+  clusterID: dotcms-production
+  starterUrl: "https://repo.dotcms.com/artifactory/libs-release-local/com/dotcms/starter/20260211/starter-20260211.zip"
+  glowroot: true
+  storage: 10Gi
+
+# PostgreSQL
+postgres:
+  image: pgvector/pgvector:pg18
+  db: dotcms
+  user: dotcmsdbuser
+  password: changeMeDbPass
+  maxConnections: 400
+  sharedBuffers: 128MB
+  storage: 10Gi
+
+# OpenSearch
+opensearch:
+  image: opensearchproject/opensearch:1
+  javaOpts: "-Xmx1G"
+  storage: 20Gi
+
+# Ingress
+ingress:
+  className: nginx
+  hosts:
+    - developer.black
+    - app.developer.black
+  tlsSecret: dotcms-tls
+  clusterIssuer: letsencrypt-http
+  proxyBodySize: 100m
+
+# Admin password
+dotcms:
+  adminPassword: changeMeAdmin

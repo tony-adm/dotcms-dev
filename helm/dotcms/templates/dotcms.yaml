@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotcms
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotcms
+  template:
+    metadata:
+      labels:
+        app: dotcms
+    spec:
+      containers:
+      - name: dotcms
+        image: {{ .Values.dotcms.image }}
+        imagePullPolicy: Always
+        env:
+        - name: DB_BASE_URL
+          value: jdbc:postgresql://dotcms-postgres/{{ .Values.postgres.db }}
+        - name: DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: dotcms-db-secret
+              key: POSTGRES_USER
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dotcms-db-secret
+              key: POSTGRES_PASSWORD
+        - name: CMS_JAVA_OPTS
+          value: {{ .Values.dotcms.javaOpts }}
+        - name: LANG
+          value: C.UTF-8
+        - name: TZ
+          value: UTC
+        - name: DOT_ES_AUTH_BASIC_PASSWORD
+          value: admin
+        - name: DOT_ES_ENDPOINTS
+          value: http://dotcms-opensearch:9200
+        - name: DOT_INITIAL_ADMIN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dotcms-db-secret
+              key: DOT_INITIAL_ADMIN_PASSWORD
+        - name: DOT_DOTCMS_CLUSTER_ID
+          value: {{ .Values.dotcms.clusterID }}
+        - name: GLOWROOT_ENABLED
+          value: {{ .Values.dotcms.glowroot | quote }}
+        - name: GLOWROOT_WEB_UI_ENABLED
+          value: {{ .Values.dotcms.glowroot | quote }}
+        - name: CUSTOM_STARTER_URL
+          value: {{ .Values.dotcms.starterUrl }}
+        ports:
+        - containerPort: 8082
+        - containerPort: 8443
+        - containerPort: 4000
+        volumeMounts:
+        - mountPath: /data/shared
+          name: shared
+      volumes:
+      - name: shared
+        persistentVolumeClaim:
+          claimName: dotcms-shared-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotcms
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: dotcms
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8082
+  - name: https
+    port: 8443
+    targetPort: 8443

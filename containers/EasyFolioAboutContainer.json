@@ -1,0 +1,16 @@
+{
+  "containerType": "STANDARD",
+  "friendlyName": "EasyFolio About Container",
+  "identifier": "EasyFolioAboutContainer",
+  "siteName": "demo.dotcms.com",
+  "languageId": 1,
+  "fields": [
+    {
+      "fieldName": "Hero Subtitle",
+      "fieldVariable": "heroText"
+    },
+    {
+      "fieldName": "Bullet_labels",
+      "fieldVariable": "statistics_bad_lines"
+    }
+]ნ

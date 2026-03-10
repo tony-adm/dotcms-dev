@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotcms-opensearch
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotcms-opensearch
+  template:
+    metadata:
+      labels:
+        app: dotcms-opensearch
+    spec:
+      containers:
+      - name: opensearch
+        image: {{ .Values.opensearch.image }}
+        env:
+        - name: cluster.name
+          value: elastic-cluster
+        - name: discovery.type
+          value: single-node
+        - name: bootstrap.memory_lock
+          value: "true"
+        - name: OPENSEARCH_JAVA_OPTS
+          value: {{ .Values.opensearch.javaOpts }}
+        - name: DISABLE_SECURITY_PLUGIN
+          value: "true"
+        ports:
+        - containerPort: 9200
+        - containerPort: 9600
+        resources:
+          limits:
+            cpu: "1"
+            memory: 2Gi
+          requests:
+            cpu: "1"
+            memory: 2Gi
+        volumeMounts:
+        - mountPath: /usr/share/opensearch/data
+          name: data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: dotcms-os-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotcms-opensearch
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: dotcms-opensearch
+  ports:
+  - port: 9200
+    targetPort: 9200
